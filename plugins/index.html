@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Elliptic Curve Research Plugins — Rank Hunter</title>
+  <meta name="description" content="Browse Rank Hunter elliptic curve research plugins: published Families, Features, and Workspaces for specialized mathematics and research workflows.">
+  <meta name="theme-color" content="#F4F6FA">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <script src="../assets/theme.js"></script>
+  <link rel="stylesheet" href="../assets/site.css">
+  <link rel="stylesheet" href="../assets/plugins.css">
+  <link rel="stylesheet" href="../assets/axiom.css">
+  <script src="../assets/plugins.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="../" aria-label="Rank Hunter home">
+        <img class="brand-logo" src="../assets/rank-hunter-logo.svg" alt="" aria-hidden="true">
+        <span class="brand-wordmark">Rank Hunter</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="../capabilities/">Capabilities</a>
+        <a href="../plugins/" aria-current="page">Plugins</a>
+        <a class="nav-cta" href="../download/">Download</a>
+        <a class="nav-optional" href="https://docs.rankhunter.net" target="_blank" rel="noopener">Docs</a>
+        <a class="nav-optional" href="../#involved">Get Involved</a>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Dark appearance off" aria-pressed="false" title="Toggle dark appearance">
+          <svg class="theme-toggle-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <defs>
+              <mask id="rank-hunter-crescent">
+                <rect width="24" height="24" fill="white"/>
+                <circle cx="15.6" cy="8.4" r="8.3" fill="black"/>
+              </mask>
+            </defs>
+            <circle cx="11.1" cy="12.1" r="9.1" fill="currentColor" mask="url(#rank-hunter-crescent)"/>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="catalog-hero section-shell">
+      <div>
+        <p class="eyebrow">Rank Hunter plugins</p>
+        <h1>Bring the mathematics.</h1>
+        <p class="catalog-lede">
+          Families carry specialized elliptic-curve mathematics. Features add focused tools.
+          Workspaces open whole research environments. Core stays generic; plugins make Rank Hunter
+          specific enough to chase the problem you actually care about.
+        </p>
+      </div>
+
+      <div class="catalog-summary" aria-label="Published plugin counts">
+        <div><strong>20</strong><span>Families</span></div>
+        <div><strong>1</strong><span>Feature</span></div>
+        <div><strong>4</strong><span>Workspaces</span></div>
+      </div>
+    </section>
+
+    <section class="catalog-tools-shell">
+      <div class="section-shell catalog-tools">
+        <label class="plugin-search">
+          <span class="sr-only">Search plugins</span>
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <path d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z"/>
+          </svg>
+          <input id="plugin-search" type="search" placeholder="Search plugins, torsion, rank, family, workspace…" autocomplete="off">
+        </label>
+
+        <div class="filter-bar" role="group" aria-label="Filter plugins by type">
+          <button class="filter-button active" type="button" data-filter="all" aria-pressed="true">All <span>25</span></button>
+          <button class="filter-button" type="button" data-filter="family" aria-pressed="false">Families <span>20</span></button>
+          <button class="filter-button" type="button" data-filter="feature" aria-pressed="false">Features <span>1</span></button>
+          <button class="filter-button" type="button" data-filter="workspace" aria-pressed="false">Workspaces <span>4</span></button>
+        </div>
+
+        <p id="catalog-status" class="catalog-status" aria-live="polite">Showing all 25 published plugins.</p>
+      </div>
+    </section>
+
+    <section class="catalog-content section-shell">
+      <section class="plugin-group" data-group="family" aria-labelledby="families-heading">
+        <div class="group-heading">
+          <div>
+            <p class="eyebrow">Family plugins</p>
+            <h2 id="families-heading">Published Families</h2>
+          </div>
+          <p>Equations, exact maps, sections, torsion structures, theorem metadata, and family-specific search geometry.</p>
+        </div>
+
+        <div class="plugin-grid">
+          <article class="plugin-card" data-plugin data-type="family" data-search="campbell c1 c6 rank 13 six branches deep search">
+            <div class="plugin-card-top"><span class="plugin-type family">Family</span><span class="plugin-version">v3.0.3</span></div>
+            <h3>Campbell C1-C6</h3>
+            <p>Six Campbell rank-13 branches with exact variants and deep search support.</p>
+            <a href="https://github.com/crhillresearch/rh-plugins/tree/main/families/campbell1999_rank13">View plugin <span aria-hidden="true">↗</span></a>
+          </article>
+
+          <article class="plugin-card" data-plugin data-type="family" data-search="dmt triad family rank 4 piezas sextuple full rational 2 torsion four generic sections">
+            <div class="plugin-card-top"><span class="plugin-type family">Family</span><span class="plugin-version">v0.1.3</span></div>
+            <h3>DMT Triad Family</h3>
+            <p>Six Piezas-sextuple triads with full rational 2-torsion and four generic sections.</p>
+            <a href="https://github.com/crhillresearch/rh-plugins/tree/main/families/dmt_triad_rank4">View plugin <span aria-hidden="true">↗</span></a>
+          </article>
+
+          <article class="plugin-card" data-plugin data-type="family" data-search="elkies rank 17 k3 published record hunt generic sections">
+            <div class="plugin-card-top"><span class="plugin-type family">Family</span><span class="plugin-version">v1.3.1</span></div>
+            <h3>Elkies Rank-17 K3</h3>
+            <p>Published rank-17 K3 record-hunt family with all 17 generic sections.</p>
+            <a href="https://github.com/crhillresearch/rh-plugins/tree/main/families/elkies_rank17_2026">View plugin <span aria-hidden="true">↗</span></a>
+          </article>
+
+          <article class="plugin-card" data-plugin data-type="family" data-search="elkies rank 18 first cover quadratic base change exact 18th section">
+            <div class="plugin-card-top"><span class="plugin-type family">Family</span><span class="plugin-version">v0.1.1</span></div>
+            <h3>Elkies Rank-18 First Cover</h3>
+            <p>First quadratic base change of the Elkies rank-17 K3 with an exact 18th section.</p>
+            <a href="https://github.com/crhillresearch/rh-plugins/tree/main/families/elkies_rank18_2026">View plugin <span aria-hidden="true">↗</span></a>
+          </article>
+
+          <article class="plugin-card" data-plugin data-type="family" data-search="elkies x1092 published mw17 k3 fibration nagao subgroup family target search">
+            <div class="plugin-card-top"><span class="plugin-type family">Family</span><span class="plugin-version">v1.3.0</span></div>
+            <h3>Elkies X1092 · Published MW17</h3>
+            <p>X1092 K3 fibration with 17 exact generic sections, fast Nagao screening, and subgroup-aware search.</p>
+            <a href="https://github.com/crhillresearch/rh-plugins/tree/main/families/elkies_x1092_rank17">View plugin <span aria-hidden="true">↗</span></a>
+          </article>
+
+          <article class="plugin-card" data-plugin data-type="family" data-search="elkies klagsbrun z2 rank 9 k3 torsion proven rank 20 specialization">
+            <div class="plugin-card-top"><span class="plugin-type family">Family</span><span class="plugin-version">v1.2.4</span></div>
+            <h3>Elkies-Klagsbrun Z/2 K3</h3>
+            <p>Z/2-torsion K3 family of generic rank 9 with a proven rank-20 specialization.</p>
+            <a href="https://github.com/crhillresearch/rh-plugins/tree/main/families/elkies_klagsbrun_z2_rank9_2020">View plugin <span aria-hidden="true">↗</span></a>
+          </article>
+
+          <article class="plugin-card" data-plugin data-type="family" data-search="fermigier mestre k3 rank 12 exact generic sections">
+            <div class="plugin-card-top"><span class="plugin-type family">Family</span><span class="plugin-version">v1.1.0</span></div>
+            <h3>Fermigier-Mestre K3</h3>
+            <p>One-parameter K3 reconstruction with 12 exact generic sections.</p>
+            <a href="https://github.com/crhillresearch/rh-plugins/tree/main/families/fermigier_rank12_exact">View plugin <span aria-hidden="true">↗</span></a>
+          </article>
+
+          <article class="plugin-card" data-plugin data-type="family" data-search="fibonacci triples odd even elliptic families diophantine triples">
+            <div class="plugin-card-top"><span class="plugin-type family">Family</span><span class="plugin-version">v0.1.3</span></div>
+            <h3>Fibonacci Triples</h3>
+            <p>Odd/even elliptic families induced by Fibonacci Diophantine triples.</p>
+            <a href="https://github.com/crhillresearch/rh-plugins/tree/main/families/fibonacci_triples">View plugin <span aria-hidden="true">↗</span></a>
+          </article>
+
+          <article class="plugin-card" data-plugin data-type="family" data-search="kihara 2001 rank 14 exact sections generic rank at least 14">
+            <div class="plugin-card-top"><span class="plugin-type family">Family</span><span class="plugin-version">v1.2.0</span></div>
+            <h3>Kihara (2001)</h3>
+            <p>Published generic-rank-at-least-14 family with 14 exact sections.</p>
+            <a href="https://github.com/crhillresearch/rh-plugins/tree/main/families/kihara_rank14">View plugin <span aria-hidden="true">↗</span></a>
+          </article>
+
+          <article class="plugin-card" data-plugin data-type="family" data-search="kloosterman rank 15 k3 mordell weil literature">
+            <div class="plugin-card-top"><span class="plugin-type family">Family</span><span class="plugin-version">v1.1.0</span></div>
+            <h3>Kloosterman Rank-15 K3</h3>
+            <p>Explicit K3 surface proved in the literature to have Mordell-Weil rank 15.</p>
+            <a href="https://github.com/crhillresearch/rh-plugins/tree/main/families/kloosterman_rank15">View plugin <span aria-hidden="true">↗</span></a>
+          </article>
+
+          <article class="plugin-card" data-plugin data-type="family" data-search="mazur torsion families prescribed torsion 15 rational groups q">
+            <div class="plugin-card-top"><span class="plugin-type family">Family</span><span class="plugin-version">v0.1.5</span></div>
+            <h3>Mazur Torsion Families</h3>
+            <p>Prescribed-torsion candidate lanes covering all 15 rational torsion groups allowed over Q.</p>
+            <a href="https://github.com/crhillresearch/rh-plugins/tree/main/families/mazur_torsion_families">View plugin <span aria-hidden="true">↗</span></a>
+          </article>
+
+          <article class="plugin-card" data-plugin data-type="family" data-search="mestre fermigier sextuple rank 11 quartic pgl2 deep search generic">
+            <div class="plugin-card-top"><span class="plugin-type family">Family</span><span class="plugin-version">v1.5.2</span></div>
+            <h3>Mestre/Fermigier Sextuple</h3>
+            <p>Generic-rank-at-least-11 Mestre sextuple family with quartic/PGL2 deep search.</p>
+            <a href="https://github.com/crhillresearch/rh-plugins/tree/main/families/mestre_sextuple_rank11">View plugin <span aria-hidden="true">↗</span></a>
+          </article>
+
+          <article class="plugin-card" data-plugin data-type="family" data-search="dujella peral z4 rank 6 torsion generators">
+            <div class="plugin-card-top"><span class="plugin-type family">Family</span><span class="plugin-version">v0.1.1</span></div>
+            <h3>Dujella-Peral Z/4 Rank 6</h3>
+            <p>Published Z/4 family with exact generic rank 6 and six reconstructed generators.</p>
+            <a href="https://github.com/crhillresearch/rh-plugins/tree/main/families/dujella_peral_z4_rank6">View plugin <span aria-hidden="true">↗</span></a>
+          </article>
+
+          <article class="plugin-card" data-plugin data-type="family" data-search="dujella peral tadic z6 rank 3 six variants torsion">
+            <div class="plugin-card-top"><span class="plugin-type family">Family</span><span class="plugin-version">v0.1.0</span></div>
+            <h3>Dujella-Peral-Tadić Z/6 Rank 3</h3>
+            <p>Six explicit Z/6 rank-3 variants from the definitive 2016 treatment.</p>
+            <a href="https://github.com/crhillresearch/rh-plugins/tree/main/families/dujella_peral_tadic_z6_rank3">View plugin <span aria-hidden="true">↗</span></a>
+          </article>
+
+          <article class="plugin-card" data-plugin data-type="family" data-search="z8 rank 2 families seven variants torsion">
+            <div class="plugin-card-top"><span class="plugin-type family">Family</span><span class="plugin-version">v0.1.0</span></div>
+            <h3>Z/8 Rank-2 Families</h3>
+            <p>Seven pairwise non-isomorphic Z/8 families of exact generic rank 2.</p>
+            <a href="https://github.com/crhillresearch/rh-plugins/tree/main/families/z8_rank2_families">View plugin <span aria-hidden="true">↗</span></a>
+          </article>
+
+          <article class="plugin-card" data-plugin data-type="family" data-search="z2 x z6 c2xc6 rank 2 families five variants torsion">
+            <div class="plugin-card-top"><span class="plugin-type family">Family</span><span class="plugin-version">v0.1.0</span></div>
+            <h3>Z/2 × Z/6 Rank-2 Families</h3>
+            <p>Five pairwise non-isomorphic Z/2 × Z/6 families of exact generic rank 2.</p>
+            <a href="https://github.com/crhillresearch/rh-plugins/tree/main/families/c2xc6_rank2_families">View plugin <span aria-hidden="true">↗</span></a>
+          </article>
+
+          <article class="plugin-card" data-plugin data-type="family" data-search="dujella peral z2 x z4 c2xc4 diophantine triple rank 4 torsion">
+            <div class="plugin-card-top"><span class="plugin-type family">Family</span><span class="plugin-version">v0.1.0</span></div>
+            <h3>Dujella-Peral Z/2 × Z/4 Diophantine Triple Rank 4</h3>
+            <p>Exact generic-rank-4 prescribed-torsion family induced by Diophantine triples.</p>
+            <a href="https://github.com/crhillresearch/rh-plugins/tree/main/families/c2xc4_diophantine_rank4">View plugin <span aria-hidden="true">↗</span></a>
+          </article>
+
+          <article class="plugin-card" data-plugin data-type="family" data-search="dujella peral diophantine triple rank 6 c2 x c2 full 2 torsion">
+            <div class="plugin-card-top"><span class="plugin-type family">Family</span><span class="plugin-version">v0.1.0</span></div>
+            <h3>Dujella-Peral Diophantine Triple Rank 6</h3>
+            <p>Fully explicit C2 × C2 Diophantine-triple family of exact generic rank 6.</p>
+            <a href="https://github.com/crhillresearch/rh-plugins/tree/main/families/diophantine_triple_rank6">View plugin <span aria-hidden="true">↗</span></a>
+          </article>
+
+          <article class="plugin-card" data-plugin data-type="family" data-search="dujella peral rational diophantine triple rank 7 genus 1 c2 x c2 lower bound">
+            <div class="plugin-card-top"><span class="plugin-type family">Family</span><span class="plugin-version">v0.1.0</span></div>
+            <h3>Dujella-Peral Rational Diophantine Triple Rank ≥7</h3>
+            <p>Genus-1-base infinite C2 × C2 family with verified generic lower bound 7.</p>
+            <a href="https://github.com/crhillresearch/rh-plugins/tree/main/families/rational_diophantine_rank7">View plugin <span aria-hidden="true">↗</span></a>
+          </article>
+
+          <article class="plugin-card" data-plugin data-type="family" data-search="nagao j 1728 rank 4 twist family four independent generic sections">
+            <div class="plugin-card-top"><span class="plugin-type family">Family</span><span class="plugin-version">v0.1.0</span></div>
+            <h3>Nagao j=1728 Rank ≥4 Twist Family</h3>
+            <p>Nagao j=1728 family with four independent generic sections.</p>
+            <a href="https://github.com/crhillresearch/rh-plugins/tree/main/families/nagao_j1728_rank4">View plugin <span aria-hidden="true">↗</span></a>
+          </article>
+        </div>
+      </section>
+
+      <section class="plugin-group" data-group="feature" aria-labelledby="features-heading">
+        <div class="group-heading">
+          <div>
+            <p class="eyebrow">Feature plugins</p>
+            <h2 id="features-heading">Published Features</h2>
+          </div>
+          <p>Focused additions that hook into an existing Rank Hunter workflow without becoming a separate research page.</p>
+        </div>
+
+        <div class="plugin-grid">
+          <article class="plugin-card" data-plugin data-type="feature" data-search="symmetry reducer exact search space campbell kihara mestre fermigier">
+            <div class="plugin-card-top"><span class="plugin-type feature">Feature</span><span class="plugin-version">v2.1.1</span></div>
+            <h3>Symmetry Reducer</h3>
+            <p>Exact search-space symmetry reduction for supported Campbell, Kihara, and Mestre/Fermigier searches.</p>
+            <a href="https://github.com/crhillresearch/rh-plugins/tree/main/extensions/symmetry_reducer">View plugin <span aria-hidden="true">↗</span></a>
+          </article>
+        </div>
+      </section>
+
+      <section class="plugin-group" data-group="workspace" aria-labelledby="workspaces-heading">
+        <div class="group-heading">
+          <div>
+            <p class="eyebrow">Workspace plugins</p>
+            <h2 id="workspaces-heading">Published Workspaces</h2>
+          </div>
+          <p>Self-contained research pages for deeper exploration that still respect core evidence and persistence boundaries.</p>
+        </div>
+
+        <div class="plugin-grid">
+          <article class="plugin-card workspace-card" data-plugin data-type="workspace" data-search="curve explorer graph real locus complex affine 3d p q r geometry">
+            <div class="plugin-card-top"><span class="plugin-type workspace">Workspace</span><span class="plugin-version">v0.5.0</span></div>
+            <h3>Curve Explorer</h3>
+            <p>Interactive real-locus Graph plus complex affine 3D projection with exact P/Q → R → −R playback for stored curves.</p>
+            <a href="https://github.com/crhillresearch/rh-plugins/tree/main/extensions/curve_explorer">View plugin <span aria-hidden="true">↗</span></a>
+          </article>
+
+          <article class="plugin-card workspace-card" data-plugin data-type="workspace" data-search="fiber atlas family landscape rank jump excess research views target search pipelines">
+            <div class="plugin-card-top"><span class="plugin-type workspace">Workspace</span><span class="plugin-version">v0.4.1</span></div>
+            <h3>Fiber Atlas</h3>
+            <p>Read-only family atlas with rank-jump/excess semantics, research views, fastpaths, and explicit search handoffs.</p>
+            <a href="https://github.com/crhillresearch/rh-plugins/tree/main/extensions/fiber_atlas">View plugin <span aria-hidden="true">↗</span></a>
+          </article>
+
+          <article class="plugin-card workspace-card" data-plugin data-type="workspace" data-search="leaderboard compare high rank synchronized torsion filters catalog">
+            <div class="plugin-card-top"><span class="plugin-type workspace">Workspace</span><span class="plugin-version">v0.2.1</span></div>
+            <h3>Leaderboard Compare</h3>
+            <p>Compare Rank Hunter curves with synchronized high-rank leaderboard data and torsion filters.</p>
+            <a href="https://github.com/crhillresearch/rh-plugins/tree/main/extensions/leaderboard_compare">View plugin <span aria-hidden="true">↗</span></a>
+          </article>
+
+          <article class="plugin-card workspace-card" data-plugin data-type="workspace" data-search="twist isogeny lab rational isogeny classes quadratic twists large curve exact probes research handoffs">
+            <div class="plugin-card-top"><span class="plugin-type workspace">Workspace</span><span class="plugin-version">v0.5.2</span></div>
+            <h3>Twist &amp; Isogeny Lab</h3>
+            <p>Exact rational isogeny classes, bounded quadratic twists, large-curve exact probes, and deterministic research handoffs.</p>
+            <a href="https://github.com/crhillresearch/rh-plugins/tree/main/extensions/twist_isogeny_lab">View plugin <span aria-hidden="true">↗</span></a>
+          </article>
+        </div>
+      </section>
+
+      <div id="no-results" class="no-results" hidden>
+        <strong>No plugins matched that search.</strong>
+        <p>Try a family name, torsion group, rank, “workspace,” or clear the filters.</p>
+      </div>
+    </section>
+
+    <section class="catalog-note">
+      <div class="section-shell catalog-note-inner">
+        <div>
+          <p class="eyebrow">Scientific boundary</p>
+          <h2>Plugin metadata is not a shortcut around proof.</h2>
+        </div>
+        <p>
+          A literature theorem, a generic rank statement, a specialized exact rank,
+          and a heuristic search score are different claims. Rank Hunter keeps them different too.
+          Each plugin's own README/provenance documents what it actually establishes.
+        </p>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <div class="section-shell final-cta-inner">
+        <div>
+          <p class="eyebrow">Build on Rank Hunter</p>
+          <h2>Missing the family you need?</h2>
+          <p>
+            Add equations, exact maps, sections, search adapters, or an entire research workspace
+            without stuffing specialized mathematics into core.
+          </p>
+        </div>
+        <div class="final-actions">
+          <a class="button primary" href="https://github.com/crhillresearch/rh-plugins">Plugin repository</a>
+          <a class="button secondary" href="https://github.com/crhillresearch/rank-hunter">Rank Hunter core</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="section-shell footer-inner footer-navlike">
+      <a class="brand footer-brand" href="../" aria-label="Rank Hunter home">
+        <img class="brand-logo" src="../assets/rank-hunter-logo.svg" alt="" aria-hidden="true">
+        <span class="brand-wordmark">Rank Hunter</span>
+      </a>
+      <p class="footer-license">Open source · GPL-3.0</p>
+      <div class="footer-links">
+        <a href="#main">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Download Rank Hunter — Elliptic Curve Research Platform</title>
+  <meta name="description" content="Download Rank Hunter, an open-source elliptic curve research platform for Windows or Linux.">
+  <meta name="theme-color" content="#F4F6FA">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <script src="../assets/theme.js"></script>
+  <link rel="stylesheet" href="../assets/site.css">
+  <link rel="stylesheet" href="../assets/download.css">
+  <link rel="stylesheet" href="../assets/axiom.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="../" aria-label="Rank Hunter home">
+        <img class="brand-logo" src="../assets/rank-hunter-logo.svg" alt="" aria-hidden="true">
+        <span class="brand-wordmark">Rank Hunter</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="../capabilities/">Capabilities</a>
+        <a href="../plugins/">Plugins</a>
+        <a class="nav-cta" href="../download/" aria-current="page">Download</a>
+        <a class="nav-optional" href="https://docs.rankhunter.net" target="_blank" rel="noopener">Docs</a>
+        <a class="nav-optional" href="../#involved">Get Involved</a>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Dark appearance off" aria-pressed="false" title="Toggle dark appearance">
+          <svg class="theme-toggle-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <defs>
+              <mask id="rank-hunter-crescent">
+                <rect width="24" height="24" fill="white"/>
+                <circle cx="15.6" cy="8.4" r="8.3" fill="black"/>
+              </mask>
+            </defs>
+            <circle cx="11.1" cy="12.1" r="9.1" fill="currentColor" mask="url(#rank-hunter-crescent)"/>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="download-hero section-shell">
+      <div>
+        <p class="eyebrow">Download</p>
+        <h1>Install Rank Hunter.</h1>
+        <p class="download-lede">
+          Use the Windows installer or run Rank Hunter directly on Ubuntu/Linux.
+          Both paths lead to the same local research environment and the same scientific runtime.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary hero-download-button" href="https://github.com/crhillresearch/rank-hunter/releases/latest/download/RankHunter-Setup-x64.exe">
+            <span>Download for Windows</span>
+            <span class="hero-version">v0.9.2</span>
+          </a>
+          <a class="button secondary" href="#linux">Ubuntu / Linux</a>
+        </div>
+        <p class="download-hero-note">
+          Windows 10/11 · x64 · WSL2 + Ubuntu handled by the installer
+        </p>
+      </div>
+
+      <div class="download-choice-panel" aria-label="Rank Hunter platform choices">
+        <div class="download-choice choice-windows">
+          <div>
+            <span class="choice-os">Windows</span>
+            <strong>RankHunter-Setup-x64.exe</strong>
+          </div>
+          <span class="choice-meta">Setup.exe · recommended</span>
+        </div>
+        <div class="download-choice">
+          <div>
+            <span class="choice-os">Ubuntu / Linux</span>
+            <strong>Install from source</strong>
+          </div>
+          <span class="choice-meta">Git + install.sh</span>
+        </div>
+        <div class="download-choice-foot">
+          Same Rank Hunter. Same evidence model. Different entry point.
+        </div>
+      </div>
+    </section>
+
+    <section class="platform-section">
+      <div class="section-shell">
+        <div class="section-heading split-heading">
+          <div>
+            <p class="eyebrow">Choose your system</p>
+            <h2>Windows or Linux.</h2>
+          </div>
+          <p>
+            Windows gets a normal installer. Ubuntu/Linux keeps the direct source install.
+            Rank Hunter's scientific stack remains Linux-based on both paths.
+          </p>
+        </div>
+
+        <div class="platform-grid">
+          <article class="platform-card platform-primary platform-windows">
+            <div class="platform-card-head">
+              <span class="platform-badge">Windows 10 / 11</span>
+              <strong>Install with Setup.exe</strong>
+            </div>
+            <p>
+              Download Rank Hunter like a normal Windows application. Setup prepares WSL2,
+              Ubuntu, SageMath, Rank Hunter, and the Start Menu launcher for you.
+            </p>
+
+            <a class="button primary platform-download-button"
+               href="https://github.com/crhillresearch/rank-hunter/releases/latest/download/RankHunter-Setup-x64.exe">
+              Download RankHunter-Setup-x64.exe
+            </a>
+
+            <div class="download-file">
+              <span class="download-file-icon" aria-hidden="true">↓</span>
+              <div>
+                <strong>RankHunter-Setup-x64.exe</strong>
+                <small>x64 · Windows 10 build 19041+ / Windows 11</small>
+              </div>
+            </div>
+
+            <ul class="platform-points">
+              <li>Detects or installs WSL2 + Ubuntu.</li>
+              <li>Installs the SageMath scientific environment inside Ubuntu.</li>
+              <li>Installs Rank Hunter and creates Start Menu shortcuts.</li>
+              <li>Launches Rank Hunter in WSL and opens it in your Windows browser.</li>
+            </ul>
+
+            <small>
+              A brand-new WSL installation may require one Windows restart and Ubuntu's
+              one-time Linux username/password setup.
+            </small>
+          </article>
+
+          <article class="platform-card" id="linux">
+            <div class="platform-card-head">
+              <span class="platform-badge">Ubuntu / Linux</span>
+              <strong>Install from source</strong>
+              <a class="source-inline-link" href="https://github.com/crhillresearch/rank-hunter">View source on GitHub <span aria-hidden="true">→</span></a>
+            </div>
+            <p>
+              Clone the public Rank Hunter repository, run the installer, and launch the UI.
+              This is the direct path for an Ubuntu research workstation.
+            </p>
+
+            <pre><code>git clone https://github.com/crhillresearch/rank-hunter.git rank-hunter
+cd rank-hunter
+bash install.sh
+
+bash scripts/run-ui.sh</code></pre>
+
+            <small>
+              The Linux installer expects a Sage-capable scientific Python and checks the
+              native build prerequisites it needs before compiling point-search tools.
+            </small>
+          </article>
+        </div>
+
+        <div class="platform-note">
+          <strong>Same scientific runtime</strong>
+          <p>
+            The Windows installer does not replace SageMath, PARI/eclib, or Rank Hunter's
+            scientific subprocesses with separate Windows implementations. It manages an Ubuntu
+            environment under WSL2 so Windows and Linux users run the same research stack.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="windows-installer-section">
+      <div class="section-shell">
+        <div class="section-heading split-heading">
+          <div>
+            <p class="eyebrow">Windows installer</p>
+            <h2>Windows feels native. The math stays Linux.</h2>
+          </div>
+          <p>
+            Setup.exe handles the Windows-facing work. The scientific runtime stays in the
+            environment Rank Hunter is built and tested for.
+          </p>
+        </div>
+
+        <div class="install-grid windows-install-grid" aria-label="Windows installation flow">
+          <article class="install-card">
+            <span class="install-step">01</span>
+            <h3>Run Setup.exe</h3>
+            <p>Install the launcher and let Rank Hunter check the Windows WSL2 prerequisites.</p>
+          </article>
+          <article class="install-card">
+            <span class="install-step">02</span>
+            <h3>Provision the research stack</h3>
+            <p>Ubuntu, Miniforge, SageMath, native tools, plugins, and Rank Hunter are prepared inside WSL.</p>
+          </article>
+          <article class="install-card">
+            <span class="install-step">03</span>
+            <h3>Launch from Start</h3>
+            <p>Rank Hunter starts inside WSL, waits for the local UI, then opens in your normal Windows browser.</p>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="install-section">
+      <div class="section-shell">
+        <div class="section-heading split-heading">
+          <div>
+            <p class="eyebrow">Ubuntu / Linux</p>
+            <h2>Install directly in three steps.</h2>
+          </div>
+          <p>
+            The source installer stays inside the checkout and is safe to rerun when refreshing
+            or repairing the local environment.
+          </p>
+        </div>
+
+        <div class="install-grid">
+          <article class="install-card primary-install">
+            <span class="install-step">01</span>
+            <h3>Clone Rank Hunter</h3>
+            <pre><code>git clone https://github.com/crhillresearch/rank-hunter.git rank-hunter
+cd rank-hunter</code></pre>
+          </article>
+
+          <article class="install-card">
+            <span class="install-step">02</span>
+            <h3>Run the installer</h3>
+            <pre><code>bash install.sh</code></pre>
+            <p>
+              Initializes native vendor submodules, installs UI/scientific runtime pieces,
+              creates or migrates the local database, builds and smoke-tests CPU ratpoints,
+              attempts the GPU build when CUDA is available, and installs the public plugin checkout.
+            </p>
+          </article>
+
+          <article class="install-card">
+            <span class="install-step">03</span>
+            <h3>Start Rank Hunter</h3>
+            <pre><code>bash scripts/run-ui.sh</code></pre>
+            <p>
+              Rank Hunter opens or creates its local <code>rank42.db</code>. Research databases and
+              backups are local scientific state and are not part of the source release.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="lite-section">
+      <div class="section-shell lite-grid">
+        <div>
+          <p class="eyebrow">Already manage the native tools?</p>
+          <h2>Use Lite mode.</h2>
+          <p>
+            If you already have working CPU/GPU ratpoints executables and want Rank Hunter to
+            preserve those configured paths, Lite mode skips native vendor compilation.
+          </p>
+        </div>
+        <div class="lite-command">
+          <span>Lite install</span>
+          <pre><code>bash install.sh --lite</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="download-details section-shell">
+      <div class="section-heading">
+        <p class="eyebrow">What gets installed</p>
+        <h2>A local research workstation.</h2>
+      </div>
+
+      <div class="download-detail-grid">
+        <article><strong>Local scientific state</strong><p>SQLite stores curves, exact points, rank evidence, jobs, lattices, quartic searches, provenance, and reproducibility metadata.</p></article>
+        <article><strong>Public plugins</strong><p>The public plugin collection keeps Family mathematics and Workspace tools separate from Rank Hunter core.</p></article>
+        <article><strong>CPU / GPU point search</strong><p>CPU ratpoints is the normal path; GPU acceleration is attempted only when a compatible CUDA environment is available.</p></article>
+        <article><strong>One evidence standard</strong><p>Windows or Linux changes how Rank Hunter starts, not what it is allowed to claim mathematically.</p></article>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <div class="section-shell final-cta-inner">
+        <div>
+          <p class="eyebrow">Ready?</p>
+          <h2>Install Rank Hunter and start hunting.</h2>
+          <p>Windows Setup.exe or Ubuntu/Linux source install. Pick your workstation.</p>
+        </div>
+        <div class="final-actions">
+          <a class="button primary" href="https://github.com/crhillresearch/rank-hunter/releases/latest/download/RankHunter-Setup-x64.exe">Download for Windows</a>
+          <a class="button secondary" href="https://github.com/crhillresearch/rank-hunter">View source</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="section-shell footer-inner footer-navlike">
+      <a class="brand footer-brand" href="../" aria-label="Rank Hunter home">
+        <img class="brand-logo" src="../assets/rank-hunter-logo.svg" alt="" aria-hidden="true">
+        <span class="brand-wordmark">Rank Hunter</span>
+      </a>
+      <p class="footer-license">Open source · GPL-3.0</p>
+      <div class="footer-links">
+        <a href="#main">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

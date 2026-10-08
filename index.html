@@ -1,0 +1,895 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rank Hunter — Elliptic Curve Research Platform</title>
+  <meta name="description" content="Rank Hunter is an open-source elliptic curve research platform for candidate search, exact rational points, rigorous rank evidence, modular pipelines, and reproducible research.">
+  <meta name="theme-color" content="#F4F6FA">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <script src="./assets/theme.js"></script>
+  <script src="./assets/pipeline-explorer.js" defer></script>
+  <link rel="stylesheet" href="./assets/site.css">
+  <link rel="stylesheet" href="./assets/axiom.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="./" aria-label="Rank Hunter home">
+        <img class="brand-logo" src="./assets/rank-hunter-logo.svg" alt="" aria-hidden="true">
+        <span class="brand-wordmark">Rank Hunter</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="./capabilities/">Capabilities</a>
+        <a href="./plugins/">Plugins</a>
+        <a class="nav-cta" href="./download/">Download</a>
+        <a class="nav-optional" href="https://docs.rankhunter.net" target="_blank" rel="noopener">Docs</a>
+        <a class="nav-optional" href="./#involved">Get Involved</a>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Dark appearance off" aria-pressed="false" title="Toggle dark appearance">
+          <svg class="theme-toggle-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <defs>
+              <mask id="rank-hunter-crescent">
+                <rect width="24" height="24" fill="white"/>
+                <circle cx="15.6" cy="8.4" r="8.3" fill="black"/>
+              </mask>
+            </defs>
+            <circle cx="11.1" cy="12.1" r="9.1" fill="currentColor" mask="url(#rank-hunter-crescent)"/>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero section-shell">
+      <div class="hero-copy">
+        <h1>Search the frontier of<br><span>elliptic curves.</span></h1>
+
+        <p class="hero-lede">
+          Rank Hunter brings candidate generation, exact rational-point search,
+          rank proof, family research, and a modular pipeline builder into one
+          proof-aware elliptic-curve workflow.
+        </p>
+
+        <div class="hero-actions hero-actions-download">
+          <div class="hero-download-stack">
+            <a class="button primary hero-download-button"
+               href="./download/">
+              <span>Download for Windows</span>
+              <span class="hero-version">v0.9.2</span>
+            </a>
+            <a class="hero-linux-link" href="./download/#linux">Ubuntu / Linux install <span aria-hidden="true">→</span></a>
+          </div>
+          <a class="button secondary" href="./capabilities/">Explore Rank Hunter</a>
+        </div>
+      </div>
+
+      <div class="hero-visual hero-math-visual" aria-label="Illustrative Rank Hunter search event">
+        <div class="visual-glow glow-a"></div>
+        <div class="visual-glow glow-b"></div>
+
+        <div class="hero-curve-stage">
+          <svg class="hero-curve-svg" viewBox="0 0 520 430" role="img" aria-labelledby="hero-curve-title hero-curve-desc">
+            <title id="hero-curve-title">Elliptic curve search visualization</title>
+            <desc id="hero-curve-desc">An illustrative elliptic curve with three rational points appearing in sequence. The final point highlights and reports example rank-growth evidence.</desc>
+            <defs>
+              <pattern id="hero-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                <path d="M 40 0 L 0 0 0 40" class="hero-grid-line"/>
+              </pattern>
+              <linearGradient id="hero-curve-gradient" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" class="hero-curve-stop-a"/>
+                <stop offset="55%" class="hero-curve-stop-b"/>
+                <stop offset="100%" class="hero-curve-stop-c"/>
+              </linearGradient>
+              <filter id="hero-point-glow" x="-80%" y="-80%" width="260%" height="260%">
+                <feGaussianBlur stdDeviation="6" result="blur"/>
+                <feMerge>
+                  <feMergeNode in="blur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+            </defs>
+
+            <rect x="18" y="18" width="484" height="394" rx="28" class="hero-graph-surface"/>
+            <rect x="38" y="34" width="444" height="356" rx="20" fill="url(#hero-grid)" class="hero-grid"/>
+            <line x1="40" y1="215" x2="480" y2="215" class="hero-axis"/>
+            <line x1="284" y1="42" x2="284" y2="388" class="hero-axis"/>
+            <text x="58" y="62" class="hero-equation">y² = x³ − x</text>
+
+            <g class="hero-curve-draw">
+              <path pathLength="1" d="M 64.4,215.0 L 67.5,203.7 L 70.6,199.3 L 73.6,196.2 L 76.7,193.7 L 79.7,191.7 L 82.8,190.0 L 85.8,188.6 L 88.9,187.4 L 91.9,186.4 L 95.0,185.5 L 98.1,184.8 L 101.1,184.2 L 104.2,183.8 L 107.2,183.5 L 110.3,183.2 L 113.3,183.1 L 116.4,183.1 L 119.4,183.1 L 122.5,183.3 L 125.6,183.5 L 128.6,183.8 L 131.7,184.2 L 134.7,184.6 L 137.8,185.2 L 140.8,185.8 L 143.9,186.5 L 146.9,187.3 L 150.0,188.1 L 153.1,189.0 L 156.1,190.1 L 159.2,191.2 L 162.2,192.4 L 165.3,193.8 L 168.3,195.3 L 171.4,196.9 L 174.4,198.8 L 177.5,200.9 L 180.6,203.5 L 183.6,206.9 L 186.7,215.0" class="hero-curve-line"/>
+              <path pathLength="1" d="M 64.4,215.0 L 67.5,226.3 L 70.6,230.7 L 73.6,233.8 L 76.7,236.3 L 79.7,238.3 L 82.8,240.0 L 85.8,241.4 L 88.9,242.6 L 91.9,243.6 L 95.0,244.5 L 98.1,245.2 L 101.1,245.8 L 104.2,246.2 L 107.2,246.5 L 110.3,246.8 L 113.3,246.9 L 116.4,246.9 L 119.4,246.9 L 122.5,246.7 L 125.6,246.5 L 128.6,246.2 L 131.7,245.8 L 134.7,245.4 L 137.8,244.8 L 140.8,244.2 L 143.9,243.5 L 146.9,242.7 L 150.0,241.9 L 153.1,241.0 L 156.1,239.9 L 159.2,238.8 L 162.2,237.6 L 165.3,236.2 L 168.3,234.7 L 171.4,233.1 L 174.4,231.2 L 177.5,229.1 L 180.6,226.5 L 183.6,223.1 L 186.7,215.0" class="hero-curve-line"/>
+              <path pathLength="1" d="M 308.9,215.0 L 311.7,203.7 L 314.6,198.7 L 317.4,194.7 L 320.3,191.2 L 323.1,188.0 L 326.0,184.9 L 328.9,182.0 L 331.7,179.2 L 334.6,176.4 L 337.4,173.7 L 340.3,171.1 L 343.1,168.5 L 346.0,165.9 L 348.8,163.3 L 351.7,160.8 L 354.5,158.2 L 357.4,155.7 L 360.2,153.2 L 363.1,150.6 L 365.9,148.1 L 368.8,145.6 L 371.6,143.1 L 374.5,140.6 L 377.3,138.0 L 380.2,135.5 L 383.0,133.0 L 385.9,130.4 L 388.7,127.9 L 391.6,125.3 L 394.4,122.7 L 397.3,120.2 L 400.1,117.6 L 403.0,115.0 L 405.9,112.4 L 408.7,109.8 L 411.6,107.2 L 414.4,104.5 L 417.3,101.9 L 420.1,99.2 L 423.0,96.6 L 425.8,93.9 L 428.7,91.2 L 431.5,88.5 L 434.4,85.8 L 437.2,83.1 L 440.1,80.4 L 442.9,77.7 L 445.8,74.9 L 448.6,72.1 L 451.5,69.4 L 454.3,66.6 L 457.2,63.8 L 460.0,61.0 L 462.9,58.2 L 465.7,55.3 L 468.6,52.5 L 471.4,49.7 L 474.3,46.8 L 477.1,43.9 L 480.0,41.0" class="hero-curve-line"/>
+              <path pathLength="1" d="M 308.9,215.0 L 311.7,226.3 L 314.6,231.3 L 317.4,235.3 L 320.3,238.8 L 323.1,242.0 L 326.0,245.1 L 328.9,248.0 L 331.7,250.8 L 334.6,253.6 L 337.4,256.3 L 340.3,258.9 L 343.1,261.5 L 346.0,264.1 L 348.8,266.7 L 351.7,269.2 L 354.5,271.8 L 357.4,274.3 L 360.2,276.8 L 363.1,279.4 L 365.9,281.9 L 368.8,284.4 L 371.6,286.9 L 374.5,289.4 L 377.3,292.0 L 380.2,294.5 L 383.0,297.0 L 385.9,299.6 L 388.7,302.1 L 391.6,304.7 L 394.4,307.3 L 397.3,309.8 L 400.1,312.4 L 403.0,315.0 L 405.9,317.6 L 408.7,320.2 L 411.6,322.8 L 414.4,325.5 L 417.3,328.1 L 420.1,330.8 L 423.0,333.4 L 425.8,336.1 L 428.7,338.8 L 431.5,341.5 L 434.4,344.2 L 437.2,346.9 L 440.1,349.6 L 442.9,352.3 L 445.8,355.1 L 448.6,357.9 L 451.5,360.6 L 454.3,363.4 L 457.2,366.2 L 460.0,369.0 L 462.9,371.8 L 465.7,374.7 L 468.6,377.5 L 471.4,380.3 L 474.3,383.2 L 477.1,386.1 L 480.0,389.0" class="hero-curve-line"/>
+            </g>
+
+            <g class="hero-point hero-point-one">
+              <circle cx="91.3" cy="186.6" r="12" class="hero-point-halo"/>
+              <circle cx="91.3" cy="186.6" r="5.5" class="hero-point-core"/>
+            </g>
+            <g class="hero-point hero-point-two">
+              <circle cx="152.4" cy="188.9" r="12" class="hero-point-halo"/>
+              <circle cx="152.4" cy="188.9" r="5.5" class="hero-point-core"/>
+            </g>
+            <g class="hero-point hero-point-three" filter="url(#hero-point-glow)">
+              <circle cx="372.4" cy="142.4" r="18" class="hero-point-ring"/>
+              <circle cx="372.4" cy="142.4" r="6.5" class="hero-point-core hero-point-core-final"/>
+            </g>
+            <path d="M 383 150 C 409 162, 418 181, 423 202" class="hero-callout-line"/>
+          </svg>
+
+          <div class="hero-research-event">
+            <span class="hero-event-label">Illustrative search event</span>
+            <div><span>Quartic hit</span><strong>2</strong></div>
+            <div><span>Rank growth</span><strong>+1</strong></div>
+            <div><span>Rigorous lower bound</span><strong>≥ 3</strong></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-pillars" aria-label="Rank Hunter highlights">
+        <span><i aria-hidden="true"></i>Exact arithmetic</span>
+        <span><i aria-hidden="true"></i>Rigorous evidence</span>
+        <span><i aria-hidden="true"></i>Modular research pipelines</span>
+        <span><i aria-hidden="true"></i>Plugin ecosystem</span>
+      </div>
+    </section>
+
+    <section class="signal-strip" aria-label="Rank Hunter philosophy">
+      <div class="section-shell signal-grid">
+        <div>
+          <span class="signal-number">Search</span>
+          <p>Explore huge arithmetic spaces without pretending every signal is a theorem.</p>
+        </div>
+        <div>
+          <span class="signal-number">Investigate</span>
+          <p>Move from promising curves into points, geometry, descent, quartics, and context.</p>
+        </div>
+        <div>
+          <span class="signal-number">Prove</span>
+          <p>Promote claims only when exact or rigorous evidence actually supports them.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="pipelines" class="pipeline-showcase">
+      <div class="section-shell pipeline-showcase-grid">
+        <div class="pipeline-copy">
+          <p class="eyebrow">Build the hunt</p>
+          <h2>Build your own elliptic-curve research machine.</h2>
+          <p class="pipeline-lede">
+            Start from a <strong>Family</strong>, <strong>Torsion Group</strong>,
+            <strong>General Curves</strong>, or a <strong>Target Curve</strong>.
+            Then assemble the exact search, transform, arithmetic, geometry,
+            evidence, and control stages you want into one saved research recipe.
+          </p>
+          <p>
+            The current core catalog exposes <strong>63 modules</strong>. Mix cheap
+            screens with exact transforms, prime signals, point search, coverings,
+            rigorous certification, adaptive strategies, and stop conditions —
+            then save, rerun, inspect, and reproduce the same plan later.
+          </p>
+          <a class="text-link" href="./capabilities/#pipelines">See how Pipelines work <span aria-hidden="true">→</span></a>
+        </div>
+
+        <div class="pipeline-module-explorer" data-module-explorer aria-label="Explore Rank Hunter pipeline modules">
+          <div class="module-explorer-head">
+            <div>
+              <span class="module-explorer-kicker">Pipeline modules</span>
+              <strong>Explore the catalog</strong>
+            </div>
+            <span class="pipeline-module-count" data-module-count>63 modules</span>
+          </div>
+
+          <div class="module-filter-bar" role="group" aria-label="Filter pipeline modules by category">
+            <button type="button" class="module-filter is-active" data-module-filter="All" aria-pressed="true">All</button>
+            <button type="button" class="module-filter" data-module-filter="Candidates" aria-pressed="false">Candidates</button>
+            <button type="button" class="module-filter" data-module-filter="Transforms" aria-pressed="false">Transforms</button>
+            <button type="button" class="module-filter" data-module-filter="Arithmetic" aria-pressed="false">Arithmetic</button>
+            <button type="button" class="module-filter" data-module-filter="Constructive" aria-pressed="false">Constructive</button>
+            <button type="button" class="module-filter" data-module-filter="Strategies" aria-pressed="false">Strategies</button>
+            <button type="button" class="module-filter" data-module-filter="Primes" aria-pressed="false">Primes</button>
+            <button type="button" class="module-filter" data-module-filter="Points" aria-pressed="false">Points</button>
+            <button type="button" class="module-filter" data-module-filter="Geometry" aria-pressed="false">Geometry</button>
+            <button type="button" class="module-filter" data-module-filter="Evidence" aria-pressed="false">Evidence</button>
+            <button type="button" class="module-filter" data-module-filter="Control" aria-pressed="false">Control</button>
+          </div>
+
+          <div class="pipeline-module-list" data-module-list>
+            <article class="pipeline-module-card" data-module-category="Candidates" data-module-id="nagao_screen">
+              <span>Candidates</span>
+              <strong>Nagao Screen</strong>
+              <p>Generate a broad candidate set and rank it with Rank Hunter's historical Nagao-style finite-field score at a modest prime bound.</p>
+            </article>
+            <article class="pipeline-module-card" data-module-category="Candidates" data-module-id="nagao_rescore">
+              <span>Candidates</span>
+              <strong>Nagao Rescore</strong>
+              <p>Rescore only the survivors at a larger prime bound with the same Rank Hunter Nagao-style scorer, preserving scorer/prime provenance, then keep a smaller shortlist.</p>
+            </article>
+            <article class="pipeline-module-card" data-module-category="Candidates" data-module-id="corpus_filter">
+              <span>Candidates</span>
+              <strong>Library Filter</strong>
+              <p>Annotate/filter the final family shortlist against plugin-declared Research Libraries without importing historical library curves.</p>
+            </article>
+            <article class="pipeline-module-card" data-module-category="Transforms" data-module-id="quadratic_twist_sweep">
+              <span>Transforms</span>
+              <strong>Quadratic Twist Sweep</strong>
+              <p>Fan one exact curve out into squarefree quadratic twists E^(d).</p>
+            </article>
+            <article class="pipeline-module-card" data-module-category="Transforms" data-module-id="targeted_twist_search">
+              <span>Transforms</span>
+              <strong>Targeted Twist Search</strong>
+              <p>Generate exact quadratic twists, optionally filter by exact root-number sign, rank survivors with Rank Hunter's audited Nagao-style log-cardinality heuristic, and keep only the strongest children under explicit stage/per-twist hard budgets.</p>
+            </article>
+            <article class="pipeline-module-card" data-module-category="Transforms" data-module-id="rank_jump_base_change">
+              <span>Transforms</span>
+              <strong>Rank-Jump / Base-Change</strong>
+              <p>Invoke an exact family-plugin transform hook that constructs published or researcher-supplied rank-jump/base-change children.</p>
+            </article>
+            <article class="pipeline-module-card" data-module-category="Transforms" data-module-id="parameter_pullback">
+              <span>Transforms</span>
+              <strong>Möbius Parameter Transform</strong>
+              <p>Apply exact nondegenerate Möbius maps to the current family parameter and continue on the resulting rational specializations.</p>
+            </article>
+            <article class="pipeline-module-card" data-module-category="Transforms" data-module-id="isogeny_walk">
+              <span>Transforms</span>
+              <strong>Isogeny Walk</strong>
+              <p>Enumerate rational prime-degree isogeny neighbors and continue the search on alternate models.</p>
+            </article>
+            <article class="pipeline-module-card" data-module-category="Arithmetic" data-module-id="covering_selmer_branch">
+              <span>Arithmetic</span>
+              <strong>Covering / Selmer Branch</strong>
+              <p>Run several independent classical 2-descent/Selmer/covering branches on the same curve, persist rigorous uppers, collect exact points, then exact-certify any rank growth.</p>
+            </article>
+            <article class="pipeline-module-card" data-module-category="Constructive" data-module-id="section_height_shell">
+              <span>Constructive</span>
+              <strong>Section Search Shell</strong>
+              <p>Ask the active family plugin for generic-section construction artifacts in an explicitly named search-height notion.</p>
+            </article>
+            <article class="pipeline-module-card" data-module-category="Constructive" data-module-id="trace_section_constructor">
+              <span>Constructive</span>
+              <strong>Trace Section Constructor</strong>
+              <p>Ask the family plugin for trace-section artifacts bound to an exact source section and explicit extension/Galois provenance.</p>
+            </article>
+            <article class="pipeline-module-card" data-module-category="Constructive" data-module-id="forced_bisection_constructor">
+              <span>Constructive</span>
+              <strong>Forced Bisection / Division Constructor</strong>
+              <p>Ask the family plugin for typed divisibility conditions such as nP=Q, bound to an exact source trace and an explicit supported division/slope mode.</p>
+            </article>
+            <article class="pipeline-module-card" data-module-category="Constructive" data-module-id="square_condition_specializer">
+              <span>Constructive</span>
+              <strong>Square-Condition Specializer</strong>
+              <p>Search plugin-supplied exact division conditions for rational specializations behind a core-owned hard timeout.</p>
+            </article>
+            <article class="pipeline-module-card" data-module-category="Strategies" data-module-id="constructive_rank_jump_loop">
+              <span>Strategies</span>
+              <strong>Constructive Rank-Jump Loop</strong>
+              <p>Run successive section-height shells through trace construction, forced division, and exact square-condition specialization, durably checkpointing each completed shell so resume starts at the first unfinished height without repeating verified symbolic work.</p>
+            </article>
+            <article class="pipeline-module-card" data-module-category="Strategies" data-module-id="upper_bound_rescue_ladder">
+              <span>Strategies</span>
+              <strong>Upper-Bound Rescue Ladder</strong>
+              <p>Try several bounded rigorous rank-upper routes in sequence: quick PARI, exact Q-isogenous PARI retries, optional short 2-Selmer, known-basis covering descents, and true higher-descent plugin hooks.</p>
+            </article>
+            <article class="pipeline-module-card" data-module-category="Strategies" data-module-id="large_height_generator_hunt">
+              <span>Strategies</span>
+              <strong>Large-Height Generator Hunt</strong>
+              <p>Adaptive generator-recovery strategy: try structured descent/covering hooks, then search MW feedback geometry and higher denominator bands before spending time on late saturation/LLL rescue.</p>
+            </article>
+            <article class="pipeline-module-card" data-module-category="Strategies" data-module-id="record_breaker_lane">
+              <span>Strategies</span>
+              <strong>Record Breaker Lane</strong>
+              <p>Escalate only curves whose rigorous lower bound has reached a configured record-hunt threshold.</p>
+            </article>
+            <article class="pipeline-module-card" data-module-category="Transforms" data-module-id="surface_fibration_switch">
+              <span>Transforms</span>
+              <strong>Surface / Fibration Switch</strong>
+              <p>Ask the active family plugin for an exact alternative elliptic fibration/surface model and continue the pipeline on the derived family or curve with full lineage.</p>
+            </article>
+            <article class="pipeline-module-card" data-module-category="Primes" data-module-id="prime_table_cache">
+              <span>Primes</span>
+              <strong>Prime Table Cache</strong>
+              <p>Cache reusable exact Frobenius data for good primes below a bound.</p>
+            </article>
+            <article class="pipeline-module-card" data-module-category="Primes" data-module-id="multi_scale_frobenius">
+              <span>Primes</span>
+              <strong>Multi-Scale Frobenius</strong>
+              <p>Compute Rank Hunter's historical log-cardinality Nagao-style score cumulatively and by prime band from cached #E(F_p).</p>
+            </article>
+            <article class="pipeline-module-card" data-module-category="Primes" data-module-id="mestre_nagao_ensemble">
+              <span>Primes</span>
+              <strong>Rank Hunter Prime-Signal Ensemble</strong>
+              <p>Combine three RH prime signals (log-cardinality, sign-reversed a_p log(p)/p, and normalized trace) into one experimental consensus scheduling score.</p>
+            </article>
+            <article class="pipeline-module-card" data-module-category="Primes" data-module-id="frobenius_persistence">
+              <span>Primes</span>
+              <strong>Frobenius Persistence</strong>
+              <p>Rank Hunter experimental scheduling heuristic: score how consistently the RH Nagao-style signal survives across disjoint prime bands, using the weakest normalized band.</p>
+            </article>
+            <article class="pipeline-module-card" data-module-category="Primes" data-module-id="explicit_formula_indicator">
+              <span>Primes</span>
+              <strong>Explicit-Formula Indicator</strong>
+              <p>Compute a smoothed good-prime/prime-power explicit-formula proxy for central-zero pressure.</p>
+            </article>
+            <article class="pipeline-module-card" data-module-category="Arithmetic" data-module-id="mestre_bober_analytic_upper">
+              <span>Arithmetic</span>
+              <strong>Conditional Analytic Rank Upper</strong>
+              <p>Run Sage's Mestre-Bober zero-sum analytic-rank upper computation in an isolated worker.</p>
+            </article>
+            <article class="pipeline-module-card" data-module-category="Arithmetic" data-module-id="brumer_kramer_classgroup_bound">
+              <span>Arithmetic</span>
+              <strong>Cubic Class-Group / 2-Selmer Bound</strong>
+              <p>For curves with E(Q)[2]=0, compute the Brumer-Kramer class-group upper bound dim Sel_2(E/Q) &lt;= g(E)+u(E)+n(E) from the cubic 2-division field and exact bad-reduction/splitting data.</p>
+            </article>
+            <article class="pipeline-module-card" data-module-category="Arithmetic" data-module-id="cassels_tate_refinement">
+              <span>Arithmetic</span>
+              <strong>Cassels–Tate Selmer Refinement</strong>
+              <p>Run PARI's unconditional 2-descent and 2-part Cassels pairing in an isolated worker.</p>
+            </article>
+            <article class="pipeline-module-card" data-module-category="Arithmetic" data-module-id="isogeny_descent">
+              <span>Arithmetic</span>
+              <strong>Isogeny Descent</strong>
+              <p>For curves with a rational 2-isogeny, run eclib/mwrank descent through each rational 2-isogeny and its dual, record the exact phi- and dual-phi Selmer dimensions, verify every route against Sage's exact maps, and promote only the resulting rigorous Mordell-Weil upper.</p>
+            </article>
+            <article class="pipeline-module-card" data-module-category="Primes" data-module-id="local_root_numbers">
+              <span>Primes</span>
+              <strong>Local Root Numbers</strong>
+              <p>Compute the exact bad-prime local root factors and global root number; optionally use an exact sign filter for scheduling.</p>
+            </article>
+            <article class="pipeline-module-card" data-module-category="Primes" data-module-id="bad_prime_fingerprint">
+              <span>Primes</span>
+              <strong>Bad-Prime Fingerprint</strong>
+              <p>Record bad primes, Kodaira symbols, discriminant/conductor valuations, Tamagawa numbers and local root factors; optional exact scheduling filters.</p>
+            </article>
+            <article class="pipeline-module-card" data-module-category="Primes" data-module-id="torsion_mod_p_sieve">
+              <span>Primes</span>
+              <strong>Torsion mod-p Sieve</strong>
+              <p>Use good-reduction injections into E(F_p) to rigorously reject impossible rational torsion targets by order divisibility and exact finite-group structure when available; passing is not proof.</p>
+            </article>
+            <article class="pipeline-module-card" data-module-category="Primes" data-module-id="local_solubility_sieve">
+              <span>Primes</span>
+              <strong>Local Solubility Sieve</strong>
+              <p>Apply rigorous mod-p obstruction tests to stored degree-4 coverings and pre-sieve downstream point-centered quartics before ratpoints.</p>
+            </article>
+            <article class="pipeline-module-card" data-module-category="Arithmetic" data-module-id="exact_torsion">
+              <span>Arithmetic</span>
+              <strong>Exact Torsion</strong>
+              <p>Compute Sage E(Q)_tors exactly in an isolated bounded worker.</p>
+            </article>
+            <article class="pipeline-module-card" data-module-category="Arithmetic" data-module-id="specialization_seeds">
+              <span>Arithmetic</span>
+              <strong>Known Specialization Seeds</strong>
+              <p>Ask the active family plugin for preserved exact specialization point bundles and independently certify them before using any historical rank metadata as rigorous evidence.</p>
+            </article>
+            <article class="pipeline-module-card" data-module-category="Arithmetic" data-module-id="family_baseline">
+              <span>Arithmetic</span>
+              <strong>Family Sections</strong>
+              <p>Specialize plugin-provided generic sections and exact-certify their independence on the stored curve.</p>
+            </article>
+            <article class="pipeline-module-card" data-module-category="Arithmetic" data-module-id="specialization_injectivity_certificate">
+              <span>Arithmetic</span>
+              <strong>Specialization Injectivity Certificate</strong>
+              <p>Certify the Gusic-Tadic specialization criterion for eligible FormulaFamily models and persist generic-family rank evidence separately from fiber rank evidence.</p>
+            </article>
+            <article class="pipeline-module-card" data-module-category="Arithmetic" data-module-id="root_number">
+              <span>Arithmetic</span>
+              <strong>Root Number</strong>
+              <p>Compute the exact global root number through the shared bounded prime/local arithmetic service and publish it through Curve Arithmetic authority.</p>
+            </article>
+            <article class="pipeline-module-card" data-module-category="Arithmetic" data-module-id="pari_upper_gate">
+              <span>Arithmetic</span>
+              <strong>PARI Upper Gate</strong>
+              <p>Try a short rigorous PARI rank upper bound with a screening-budget timeout.</p>
+            </article>
+            <article class="pipeline-module-card" data-module-category="Arithmetic" data-module-id="selmer_bound">
+              <span>Arithmetic</span>
+              <strong>mwrank 2-Descent Rank Upper</strong>
+              <p>Run bounded eclib/mwrank 2-descent and use mwrank rank_bound() as a rigorous Mordell-Weil rank upper bound.</p>
+            </article>
+            <article class="pipeline-module-card" data-module-category="Arithmetic" data-module-id="selmer_headroom">
+              <span>Arithmetic</span>
+              <strong>mwrank Rank Headroom</strong>
+              <p>Rank unresolved fibers by the gap between the rigorous mwrank rank_bound() upper and current rigorous lower bound.</p>
+            </article>
+            <article class="pipeline-module-card" data-module-category="Points" data-module-id="small_point_density">
+              <span>Points</span>
+              <strong>Small-Point Discovery Yield</strong>
+              <p>Rank Hunter experimental search-yield statistic: prepare one fixed exact search model for the stage, then run shallow denominator-1 searches at increasing heights and score fresh exact-point yield only from completed comparable rounds.</p>
+            </article>
+            <article class="pipeline-module-card" data-module-category="Points" data-module-id="integral_seed">
+              <span>Points</span>
+              <strong>Native Model Seed</strong>
+              <p>Search the exact stored/family model directly with bounded ratpoints, avoiding global-minimal-model preprocessing by default.</p>
+            </article>
+            <article class="pipeline-module-card" data-module-category="Geometry" data-module-id="simon_covering">
+              <span>Geometry</span>
+              <strong>Simon 2-Covering (Legacy)</strong>
+              <p>Legacy/alternative Denis Simon two-descent search.</p>
+            </article>
+            <article class="pipeline-module-card" data-module-category="Geometry" data-module-id="mwrank_covering">
+              <span>Geometry</span>
+              <strong>mwrank 2-Covering</strong>
+              <p>Run bounded standard eclib/mwrank full 2-descent/covering search.</p>
+            </article>
+            <article class="pipeline-module-card" data-module-category="Geometry" data-module-id="higher_descent_ladder">
+              <span>Geometry</span>
+              <strong>Higher Descent Ladder</strong>
+              <p>Run rigorous built-in 2-descent first, then escalate through true higher-descent levels supplied by a compatible research plugin.</p>
+            </article>
+            <article class="pipeline-module-card" data-module-category="Geometry" data-module-id="covering_minimize_reduce">
+              <span>Geometry</span>
+              <strong>Covering Minimization &amp; Reduction</strong>
+              <p>Replace active rank42.covering.v1 square quartics by smaller exactly equivalent search models.</p>
+            </article>
+            <article class="pipeline-module-card" data-module-category="Geometry" data-module-id="covering_local_height_planner">
+              <span>Geometry</span>
+              <strong>Local Solubility &amp; Covering Height Planner</strong>
+              <p>For each active square-quartic covering, test every completion of Q relevant to local solubility and attach a ranked point-search budget.</p>
+            </article>
+            <article class="pipeline-module-card" data-module-category="Geometry" data-module-id="selmer_element_fanout">
+              <span>Geometry</span>
+              <strong>Exact Covering Fan-Out</strong>
+              <p>Import exact mapped covering objects from the active plugin and/or existing Rank Hunter covering store, search each covering independently, map exact rational hits back to E(Q), and certify growth.</p>
+            </article>
+            <article class="pipeline-module-card" data-module-category="Geometry" data-module-id="padic_covering_search">
+              <span>Geometry</span>
+              <strong>p-adic Covering Point Search</strong>
+              <p>Delegate a true p-adic covering-point search to an installed research engine/plugin through the core-owned hard-timeout worker.</p>
+            </article>
+            <article class="pipeline-module-card" data-module-category="Geometry" data-module-id="plugin_family_search">
+              <span>Geometry</span>
+              <strong>Plugin Family Search</strong>
+              <p>Run the selected Family adapter search for one stored-pool Pipeline candidate inside a temporary database copy.</p>
+            </article>
+            <article class="pipeline-module-card" data-module-category="Geometry" data-module-id="plugin_geometry">
+              <span>Geometry</span>
+              <strong>Plugin Geometry</strong>
+              <p>Invoke the selected family plugin's native target geometry behind a core-owned scientific-write boundary.</p>
+            </article>
+            <article class="pipeline-module-card" data-module-category="Geometry" data-module-id="pointed_quartic">
+              <span>Geometry</span>
+              <strong>Point-Centered Quartics</strong>
+              <p>Build exact quartic search geometry around already-known points and search mapped rational points.</p>
+            </article>
+            <article class="pipeline-module-card" data-module-category="Geometry" data-module-id="mw_growth_loop">
+              <span>Geometry</span>
+              <strong>MW Growth Loop</strong>
+              <p>Repeatedly rebuild point-centered quartic geometry from the enlarged exact point set; each successful round feeds its new points into the next round.</p>
+            </article>
+            <article class="pipeline-module-card" data-module-category="Points" data-module-id="denominator_band">
+              <span>Points</span>
+              <strong>Denominator Band Search</strong>
+              <p>Search adaptive affine charts inside the configured chart-coordinate denominator interval, then exact-certify any new independent points.</p>
+            </article>
+            <article class="pipeline-module-card" data-module-category="Points" data-module-id="point_yield_persistence">
+              <span>Points</span>
+              <strong>Point-Yield Persistence</strong>
+              <p>Score continued fresh exact-point discovery across completed comparable, progressively deeper chart-denominator searches.</p>
+            </article>
+            <article class="pipeline-module-card" data-module-category="Points" data-module-id="affine_search">
+              <span>Points</span>
+              <strong>Affine Rational Search</strong>
+              <p>Run exact bounded ratpoints searches over adaptive affine charts.</p>
+            </article>
+            <article class="pipeline-module-card" data-module-category="Evidence" data-module-id="independence">
+              <span>Evidence</span>
+              <strong>Exact Independence</strong>
+              <p>Certify exact ledger points against the rigorous witness basis.</p>
+            </article>
+            <article class="pipeline-module-card" data-module-category="Evidence" data-module-id="saturation">
+              <span>Evidence</span>
+              <strong>Bounded Saturation</strong>
+              <p>Saturate the complete rigorous witness subgroup through a bounded prime.</p>
+            </article>
+            <article class="pipeline-module-card" data-module-category="Evidence" data-module-id="full_saturation_index_recovery">
+              <span>Evidence</span>
+              <strong>Saturation Prime Ladder / Index Recovery</strong>
+              <p>Run an exact bounded saturation prime ladder on the complete rigorous witness basis, ingest any recovered saturated basis points, and re-certify them.</p>
+            </article>
+            <article class="pipeline-module-card" data-module-category="Evidence" data-module-id="height_lattice_reduction">
+              <span>Evidence</span>
+              <strong>Height-Lattice Reduction</strong>
+              <p>Compute the Néron–Tate height-pairing matrix on the rigorous witness basis, LLL-reduce it, persist the lattice, and exact-certify the reduced point basis.</p>
+            </article>
+            <article class="pipeline-module-card" data-module-category="Evidence" data-module-id="final_upper">
+              <span>Evidence</span>
+              <strong>Final Rigorous Upper</strong>
+              <p>Spend a larger PARI budget after point discovery to try to close the rigorous rank interval.</p>
+            </article>
+            <article class="pipeline-module-card" data-module-category="Control" data-module-id="select_survivors">
+              <span>Control</span>
+              <strong>Select Survivors</strong>
+              <p>Keep only the strongest fibers for later stages.</p>
+            </article>
+            <article class="pipeline-module-card" data-module-category="Control" data-module-id="adaptive_ladder">
+              <span>Control</span>
+              <strong>Adaptive Denominator Ladder</strong>
+              <p>Progressively narrow the surviving population while moving bounded exact point-search screens through higher chart-denominator bands.</p>
+            </article>
+            <article class="pipeline-module-card" data-module-category="Control" data-module-id="stop_goal">
+              <span>Control</span>
+              <strong>Stop at Rank Goal</strong>
+              <p>Stop the run as soon as a candidate reaches the configured rigorous lower-bound goal.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="capabilities" class="content-section section-shell">
+      <div class="section-heading">
+        <p class="eyebrow">One research environment</p>
+        <h2>From the first candidate to the final certificate.</h2>
+        <p>
+          Rank Hunter connects the stages researchers already use, keeps their evidence
+          separate, and makes the next useful action obvious.
+        </p>
+      </div>
+
+      <div class="feature-grid">
+        <article class="feature-card featured">
+          <span class="card-index">01</span>
+          <p class="card-kicker">Discover</p>
+          <h3>Search where the mathematics says to look.</h3>
+          <p>
+            Generate candidate pools, specialize elliptic-curve families, prioritize with
+            heuristic signals, and move promising fibers into reproducible searches.
+          </p>
+          <ul class="mini-list">
+            <li>Auto, Family, General, and Target search</li>
+            <li>Candidate generation and durable pools</li>
+            <li>CPU/GPU rational-point search paths</li>
+          </ul>
+        </article>
+
+        <article class="feature-card">
+          <span class="card-index">02</span>
+          <p class="card-kicker">Investigate</p>
+          <h3>Go deep on one curve without losing context.</h3>
+          <p>
+            Bring points, arithmetic, search history, geometry, coverings, and next-step
+            planning together around the same retained research object.
+          </p>
+          <ul class="mini-list">
+            <li>Curves and Target research workflows</li>
+            <li>Lattices and Quartics analysis</li>
+            <li>Libraries and external catalogs</li>
+          </ul>
+        </article>
+
+        <article class="feature-card">
+          <span class="card-index">03</span>
+          <p class="card-kicker">Prove</p>
+          <h3>Build rank claims from exact evidence.</h3>
+          <p>
+            Verify exact points, certify independence, persist lower and upper bounds, and
+            record exact rank only when the rigorous interval closes.
+          </p>
+          <ul class="mini-list">
+            <li>Exact point verification</li>
+            <li>Independence and rank evidence</li>
+            <li>Bounded descent and saturation</li>
+          </ul>
+        </article>
+
+        <article class="feature-card">
+          <span class="card-index">04</span>
+          <p class="card-kicker">Organize</p>
+          <h3>Research that survives tomorrow morning.</h3>
+          <p>
+            Campaigns, Jobs, Candidates, and Curves preserve the research state around the thing
+            Pipelines make possible: reusable, inspectable scientific execution plans.
+          </p>
+          <ul class="mini-list">
+            <li>Immutable run snapshots</li>
+            <li>Resume/checkpoint state</li>
+            <li>Research provenance and history</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="inline-cta">
+        <p><strong>That is only the short version.</strong><br>See the full capability map organized by what you are trying to accomplish.</p>
+        <a class="text-link" href="./capabilities/">Explore all capabilities <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+
+    <section id="research" class="content-section proof-section">
+      <div class="section-shell proof-layout">
+        <div class="proof-copy">
+          <p class="eyebrow">Proof-aware by design</p>
+          <h2>Rank Hunter knows the difference between a clue and a theorem.</h2>
+          <p class="large-copy">
+            Root numbers, Nagao scores, numerical height screens, and search heuristics can
+            decide where to spend time. They do not silently become rank claims.
+          </p>
+        </div>
+
+        <div class="evidence-ladder" aria-label="Evidence progression">
+          <div class="ladder-row">
+            <span class="ladder-dot heuristic"></span>
+            <div><strong>Heuristic signal</strong><small>Useful for prioritization</small></div>
+            <span class="ladder-class">signal</span>
+          </div>
+          <div class="ladder-row">
+            <span class="ladder-dot exact"></span>
+            <div><strong>Exact rational point</strong><small>Verified on the stored curve</small></div>
+            <span class="ladder-class">exact</span>
+          </div>
+          <div class="ladder-row">
+            <span class="ladder-dot rigorous"></span>
+            <div><strong>Independent point set</strong><small>Certifies a rigorous lower bound</small></div>
+            <span class="ladder-class">rigorous</span>
+          </div>
+          <div class="ladder-row">
+            <span class="ladder-dot rigorous"></span>
+            <div><strong>Rigorous upper bound</strong><small>Produced by a supported proof engine</small></div>
+            <span class="ladder-class">rigorous</span>
+          </div>
+          <div class="ladder-row final">
+            <span class="ladder-dot proof"></span>
+            <div><strong>Exact rank</strong><small>Lower bound = upper bound</small></div>
+            <span class="ladder-class">proved</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="research-instruments">
+      <div class="section-shell">
+        <div class="section-heading split-heading instruments-heading">
+          <div>
+            <p class="eyebrow">Research instruments</p>
+            <h2>The parts that matter when a curve stops being easy.</h2>
+          </div>
+          <p>
+            Rank Hunter does not collapse search, numerical evidence, exact arithmetic, and proof
+            into one score. Each instrument owns a specific part of the research problem and hands
+            its output forward without changing what that evidence means.
+          </p>
+        </div>
+
+        <div class="instrument-grid">
+          <article class="instrument-card instrument-proof">
+            <div class="instrument-head">
+              <span class="instrument-index">01</span>
+              <div><span class="instrument-kicker">Evidence + proof</span><h3>Every claim has a level.</h3></div>
+            </div>
+            <p>
+              Exact points, rigorous independence, rigorous upper bounds, conditional analytic
+              evidence, and heuristics remain different objects. A timeout stays inconclusive;
+              exact rank appears only when rigorous bounds actually meet.
+            </p>
+            <div class="instrument-proof-stack" aria-label="Evidence classes">
+              <span class="proof-chip heuristic">heuristic</span>
+              <span class="proof-sep">→</span>
+              <span class="proof-chip exact">exact point</span>
+              <span class="proof-sep">→</span>
+              <span class="proof-chip rigorous">independence</span>
+              <span class="proof-sep">+</span>
+              <span class="proof-chip rigorous">upper bound</span>
+              <span class="proof-sep">→</span>
+              <span class="proof-chip proof">exact rank</span>
+            </div>
+          </article>
+
+          <article class="instrument-card instrument-lattice">
+            <div class="instrument-head">
+              <span class="instrument-index">02</span>
+              <div><span class="instrument-kicker">Lattices</span><h3>Interrogate the generator geometry.</h3></div>
+            </div>
+            <p>
+              Inspect canonical-height Gram matrices, correlations, eigenvalue strength,
+              LLL-reduced bases, candidate residuals, and stored analyses. Then hand promising
+              numerical directions to Target or Independence for work that can actually change rank evidence.
+            </p>
+            <div class="lattice-sketch" aria-label="Lattice analysis capabilities">
+              <div><strong>Gram matrix</strong><span>canonical heights</span></div>
+              <div><strong>LLL</strong><span>basis reduction</span></div>
+              <div><strong>Residuals</strong><span>candidate directions</span></div>
+              <div><strong>Boundary</strong><span>numerical ≠ proof</span></div>
+            </div>
+          </article>
+
+          <article class="instrument-card instrument-quartics">
+            <div class="instrument-head">
+              <span class="instrument-index">03</span>
+              <div><span class="instrument-kicker">Quartics</span><h3>Turn covering geometry into a persisted search program.</h3></div>
+            </div>
+            <p>
+              Rank Hunter stores exact covering models, bounded search attempts, coverage, empirical
+              yield, map-back results, provenance, and next-attack context instead of treating quartic
+              work as disposable terminal output.
+            </p>
+            <div class="quartic-sketch">
+              <span>Exact covering</span><i>→</i><span>Search coverage</span><i>→</i><span>Map back</span><i>→</i><span>Point ledger</span>
+            </div>
+            <small class="instrument-note">Finite coverage is never presented as exhaustion.</small>
+          </article>
+
+          <article class="instrument-card instrument-library">
+            <div class="instrument-head">
+              <span class="instrument-index">04</span>
+              <div><span class="instrument-kicker">Libraries</span><h3>Bring the research mess. Keep the evidence clean.</h3></div>
+            </div>
+            <p>
+              Keep old certificates, spreadsheets, curve dumps, mapped points, historical observations,
+              and plugin corpora available for search and comparison without silently inserting their
+              claims into Rank Hunter's authoritative local evidence.
+            </p>
+            <div class="library-artifact-fan" aria-hidden="true">
+              <img src="./assets/library-files-fan.svg" alt="">
+            </div>
+            <div class="library-flow" aria-label="Library research flow">
+              <div class="library-flow-row">
+                <span>Artifacts</span><i>→</i><span>Mapping</span><i>→</i><span>External projection</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="plugins" class="content-section section-shell">
+      <div class="section-heading split-heading">
+        <div>
+          <p class="eyebrow">A research platform, not a monolith</p>
+          <h2>Bring the mathematics with plugins.</h2>
+        </div>
+        <p>
+          Core stays generic. Family equations, published sections, contextual Features,
+          and full research Workspaces live in installable plugins.
+        </p>
+      </div>
+
+      <div class="plugin-stats">
+        <div class="plugin-stat">
+          <strong>20</strong>
+          <span>published Families</span>
+          <p>Family-specific mathematics, sections, torsion structures, and search adapters.</p>
+        </div>
+        <div class="plugin-stat">
+          <strong>1</strong>
+          <span>published Feature</span>
+          <p>Focused additions that hook cleanly into core-owned workflows.</p>
+        </div>
+        <div class="plugin-stat">
+          <strong>4</strong>
+          <span>published Workspaces</span>
+          <p>Self-contained research instruments for deeper exploration.</p>
+        </div>
+      </div>
+
+      <div class="workspace-row">
+        <article>
+          <span>Workspace</span>
+          <h3>Curve Explorer</h3>
+          <p>Real-locus and complex 3D geometry for stored elliptic curves.</p>
+        </article>
+        <article>
+          <span>Workspace</span>
+          <h3>Fiber Atlas</h3>
+          <p>Family landscapes, rank-jump context, and deterministic research handoffs.</p>
+        </article>
+        <article>
+          <span>Workspace</span>
+          <h3>Leaderboard Compare</h3>
+          <p>Compare retained curves with synchronized high-rank reference data.</p>
+        </article>
+        <article>
+          <span>Workspace</span>
+          <h3>Twist &amp; Isogeny Lab</h3>
+          <p>Exact isogeny classes, bounded quadratic twists, and large-curve probes.</p>
+        </article>
+      </div>
+
+      <div class="inline-cta">
+        <p><strong>Want to add a family, a research tool, or an entire workspace?</strong><br>Plugins are designed to keep specialized mathematics out of core without making it second-class.</p>
+        <a class="text-link" href="./plugins/">Browse all plugins <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+
+    <section class="content-section research-os">
+      <div class="section-shell research-os-grid">
+        <div>
+          <p class="eyebrow">Built for actual research</p>
+          <h2>Leave yourself a trail.</h2>
+        </div>
+
+        <div class="research-points">
+          <article>
+            <span class="research-icon">↻</span>
+            <div>
+              <h3>Resume real work</h3>
+              <p>Pipelines and Jobs preserve run configuration, progress, and reproducibility metadata instead of reducing research to terminal history.</p>
+            </div>
+          </article>
+          <article>
+            <span class="research-icon">◎</span>
+            <div>
+              <h3>Keep provenance attached</h3>
+              <p>Curves, points, evidence, source families, catalogs, and research handoffs retain where they came from and what they actually establish.</p>
+            </div>
+          </article>
+          <article>
+            <span class="research-icon">⌁</span>
+            <div>
+              <h3>Stay local-first</h3>
+              <p>Your authoritative scientific state remains local. External catalogs and plugin libraries stay reference data until you explicitly launch new work.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="involved" class="content-section section-shell">
+      <div class="section-heading">
+        <p class="eyebrow">Get involved</p>
+        <h2>Bring what you know.</h2>
+        <p>
+          Rank Hunter has useful contribution paths for programmers, mathematicians,
+          researchers, plugin authors, documentation writers, and people who simply find bugs.
+        </p>
+      </div>
+
+      <div class="contribute-grid">
+        <article class="contribute-card">
+          <span class="contribute-label">Code</span>
+          <h3>Build the research instrument.</h3>
+          <p>Core infrastructure, scientific engines, UI, reproducibility, performance, testing, and platform support.</p>
+          <a class="text-link" href="https://github.com/crhillresearch/rank-hunter">Core repository <span aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="contribute-card">
+          <span class="contribute-label">Mathematics</span>
+          <h3>Bring a family or research idea.</h3>
+          <p>Published families, sections, provenance, exact maps, search geometry, test cases, and new research workflows.</p>
+          <a class="text-link" href="https://github.com/crhillresearch/rh-plugins">Plugin repository <span aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="contribute-card">
+          <span class="contribute-label">Use it hard</span>
+          <h3>Break it in interesting ways.</h3>
+          <p>Run searches, test huge curves, report failures, challenge the evidence model, improve documentation, and share reproducible cases.</p>
+          <a class="text-link" href="https://github.com/crhillresearch/rank-hunter/issues">Report an issue <span aria-hidden="true">→</span></a>
+        </article>
+      </div>
+    </section>
+
+    <section id="start" class="final-cta">
+      <div class="section-shell final-cta-inner">
+        <div>
+          <p class="eyebrow">Ready when you are</p>
+          <h2>Start hunting.</h2>
+          <p>
+            Rank Hunter is open source. Install it locally, add the plugins you care about,
+            and make the search your own.
+          </p>
+        </div>
+        <div class="final-actions">
+          <a class="button primary" href="./download/">Get Rank Hunter</a>
+          <a class="button secondary" href="./plugins/">Browse plugins</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="section-shell footer-inner footer-navlike">
+      <a class="brand footer-brand" href="./" aria-label="Rank Hunter home">
+        <img class="brand-logo" src="./assets/rank-hunter-logo.svg" alt="" aria-hidden="true">
+        <span class="brand-wordmark">Rank Hunter</span>
+      </a>
+      <p class="footer-license">Open source · GPL-3.0</p>
+      <div class="footer-links">
+        <a href="#main">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

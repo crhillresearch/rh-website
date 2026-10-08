@@ -1,0 +1,1386 @@
+/* Rank Hunter website — Axiom visual identity layer.
+ *
+ * The website keeps its showcase-oriented layout, while inheriting the current
+ * Axiom application's actual light/dark color system and surface language.
+ */
+
+:root {
+  color-scheme: light;
+
+  --ax-bg: #F4F6FA;
+  --ax-surface: #FFFFFF;
+  --ax-surface-soft: #F8FAFD;
+  --ax-nav: #FFFFFF;
+
+  --ax-primary: #246BFD;
+  --ax-primary-deep: #1557E8;
+  --ax-primary-soft: #EAF1FF;
+  --ax-blue-500: #397BFF;
+
+  --ax-green: #28B774;
+  --ax-green-soft: #EAF9F1;
+  --ax-amber: #F2A23A;
+  --ax-amber-soft: #FFF5E5;
+  --ax-violet: #7B61E8;
+  --ax-violet-soft: #F0EDFF;
+  --ax-red: #E45272;
+  --ax-red-soft: #FDEEF2;
+
+  --ax-text: #141B2A;
+  --ax-text-secondary: #49566B;
+  --ax-muted: #7D899B;
+  --ax-muted-2: #A3ADBB;
+
+  --ax-border-subtle: #EEF1F6;
+  --ax-border: #E4E8F0;
+  --ax-border-strong: #D3D9E5;
+  --ax-control-border: #C7CFDB;
+
+  --ax-shadow: 0 12px 34px rgba(31, 45, 75, .07);
+  --ax-shadow-strong: 0 24px 70px rgba(31, 45, 75, .11);
+
+  --bg: var(--ax-bg);
+  --bg-deep: #EDF1F7;
+  --surface: var(--ax-surface);
+  --surface-2: var(--ax-surface-soft);
+  --surface-3: #F1F5FC;
+  --text: var(--ax-text);
+  --muted: var(--ax-text-secondary);
+  --muted-2: var(--ax-muted);
+  --border: var(--ax-border);
+  --border-strong: var(--ax-border-strong);
+
+  /* Preserve the existing semantic variable names while moving the site to Axiom. */
+  --cyan: var(--ax-primary);
+  --blue: var(--ax-blue-500);
+  --violet: var(--ax-violet);
+  --green: var(--ax-green);
+  --amber: var(--ax-amber);
+  --danger: var(--ax-red);
+  --shadow: var(--ax-shadow-strong);
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+
+  --ax-bg: #0D1117;
+  --ax-surface: #161B22;
+  --ax-surface-soft: #21262D;
+  --ax-nav: #010409;
+
+  --ax-primary: #58A6FF;
+  --ax-primary-deep: #79C0FF;
+  --ax-primary-soft: #1F3655;
+  --ax-blue-500: #388BFD;
+
+  --ax-green: #3FB950;
+  --ax-green-soft: #12331F;
+  --ax-amber: #D29922;
+  --ax-amber-soft: #3A2B12;
+  --ax-violet: #A371F7;
+  --ax-violet-soft: #2D2146;
+  --ax-red: #F85149;
+  --ax-red-soft: #3C1E1E;
+
+  --ax-text: #E6EDF3;
+  --ax-text-secondary: #C9D1D9;
+  --ax-muted: #9DA7B1;
+  --ax-muted-2: #8B949E;
+
+  --ax-border-subtle: #21262D;
+  --ax-border: #30363D;
+  --ax-border-strong: #484F58;
+  --ax-control-border: #484F58;
+
+  --ax-shadow: 0 12px 34px rgba(0, 0, 0, .22);
+  --ax-shadow-strong: 0 28px 78px rgba(0, 0, 0, .35);
+
+  --bg-deep: #010409;
+  --surface-3: #252C35;
+}
+
+/* Base page */
+
+html,
+body {
+  background: var(--ax-bg);
+}
+
+body {
+  color: var(--ax-text);
+  background:
+    radial-gradient(circle at 82% 0%, color-mix(in srgb, var(--ax-primary) 9%, transparent), transparent 31rem),
+    radial-gradient(circle at 2% 20%, color-mix(in srgb, var(--ax-violet) 4%, transparent), transparent 27rem),
+    var(--ax-bg);
+}
+
+::selection {
+  background: color-mix(in srgb, var(--ax-primary) 20%, transparent);
+}
+
+.skip-link {
+  background: var(--ax-primary);
+  color: #FFFFFF;
+}
+
+.site-header {
+  border-bottom-color: var(--ax-border-subtle);
+  background: color-mix(in srgb, var(--ax-nav) 90%, transparent);
+  box-shadow: 0 1px 0 color-mix(in srgb, var(--ax-border) 65%, transparent);
+}
+
+.brand-mark {
+  border-color: color-mix(in srgb, var(--ax-primary) 28%, var(--ax-border));
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--ax-primary) 10%, var(--ax-surface)),
+    var(--ax-surface)
+  );
+  color: var(--ax-primary);
+  box-shadow: inset 0 1px color-mix(in srgb, #FFFFFF 65%, transparent);
+}
+
+html[data-theme="dark"] .brand-mark {
+  box-shadow: inset 0 1px rgba(255, 255, 255, .05);
+}
+
+.brand,
+.brand-copy strong {
+  color: var(--ax-text);
+}
+
+.brand-copy small {
+  color: var(--ax-muted);
+}
+
+.site-nav a {
+  color: var(--ax-text-secondary);
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+  color: var(--ax-text);
+}
+
+.site-nav .nav-cta {
+  border-color: var(--ax-border-strong);
+  background: var(--ax-surface);
+  color: var(--ax-text);
+  box-shadow: 0 1px 2px rgba(31,45,75,.04);
+}
+
+.site-nav .nav-cta:hover {
+  border-color: color-mix(in srgb, var(--ax-primary) 55%, var(--ax-border));
+  background: var(--ax-primary-soft);
+  color: var(--ax-primary-deep);
+}
+
+/* Shared Axiom theme switch */
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .4rem;
+  min-height: 2.45rem;
+  padding: .48rem .62rem;
+  border: 1px solid var(--ax-border-strong);
+  border-radius: .65rem;
+  background: var(--ax-surface);
+  color: var(--ax-text-secondary);
+  font: inherit;
+  font-size: .72rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(31,45,75,.035);
+  transition: border-color .18s ease, background .18s ease, color .18s ease;
+}
+
+.theme-toggle:hover {
+  border-color: color-mix(in srgb, var(--ax-primary) 55%, var(--ax-border));
+  background: var(--ax-primary-soft);
+  color: var(--ax-primary-deep);
+}
+
+.theme-toggle:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--ax-primary) 24%, transparent);
+  outline-offset: 2px;
+}
+
+.theme-toggle-icon {
+  display: grid;
+  place-items: center;
+  width: 1.05rem;
+  height: 1.05rem;
+  color: var(--ax-primary);
+  font-size: .86rem;
+  line-height: 1;
+}
+
+.theme-toggle-label {
+  min-width: 2.2rem;
+  text-align: left;
+}
+
+/* Typography + buttons */
+
+.kicker,
+.eyebrow,
+.card-kicker,
+.capability-label,
+.plugin-stat span,
+.plugin-card a,
+.text-link {
+  color: var(--ax-primary);
+}
+
+.status-dot {
+  background: var(--ax-green);
+  box-shadow:
+    0 0 0 .27rem color-mix(in srgb, var(--ax-green) 12%, transparent),
+    0 0 1.3rem color-mix(in srgb, var(--ax-green) 36%, transparent);
+}
+
+.hero h1,
+.section-heading h2,
+.proof-copy h2,
+.research-os h2,
+.final-cta h2,
+.feature-card h3,
+.workspace-row h3,
+.contribute-card h3,
+.research-points h3 {
+  color: var(--ax-text);
+}
+
+.hero h1 span,
+.features-hero h1 span {
+  background: linear-gradient(90deg, var(--ax-primary-deep), var(--ax-blue-500) 58%, var(--ax-violet));
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.hero-lede,
+.section-heading > p:last-child,
+.proof-copy > p,
+.final-cta p,
+.feature-card > p:not(.card-kicker),
+.workspace-row p,
+.contribute-card p,
+.research-points p,
+.signal-grid p,
+.inline-cta p {
+  color: var(--ax-text-secondary);
+}
+
+.hero-notes,
+.curve-caption,
+.window-mode,
+.flow-row small,
+.ladder-row small,
+.plugin-card p,
+.group-heading > p,
+.catalog-lede,
+.features-hero-copy > p:last-child,
+.area-heading > div:last-child > p:last-child,
+.reference-grid p,
+.extend-grid p,
+.object-grid p {
+  color: var(--ax-muted);
+}
+
+.hero-notes span::before {
+  color: var(--ax-primary);
+}
+
+.button {
+  border-color: var(--ax-border-strong);
+}
+
+.button.primary {
+  border-color: var(--ax-primary);
+  background: linear-gradient(180deg, var(--ax-primary), var(--ax-primary-deep));
+  color: #FFFFFF;
+  box-shadow: 0 7px 18px color-mix(in srgb, var(--ax-primary) 18%, transparent);
+}
+
+html:not([data-theme="dark"]) .button.primary {
+  background: linear-gradient(135deg, #1557E8, #397BFF);
+}
+
+.button.primary:hover {
+  box-shadow: 0 9px 24px color-mix(in srgb, var(--ax-primary) 25%, transparent);
+}
+
+.button.secondary {
+  border-color: var(--ax-border-strong);
+  background: var(--ax-surface);
+  color: var(--ax-text);
+}
+
+.button.secondary:hover {
+  border-color: color-mix(in srgb, var(--ax-primary) 48%, var(--ax-border));
+  background: var(--ax-primary-soft);
+  color: var(--ax-primary-deep);
+}
+
+.button:focus-visible,
+.site-nav a:focus-visible,
+.text-link:focus-visible,
+.brand:focus-visible {
+  outline-color: color-mix(in srgb, var(--ax-primary) 28%, transparent);
+}
+
+/* Hero research instrument */
+
+.visual-glow {
+  opacity: .11;
+}
+
+.glow-a {
+  background: var(--ax-primary);
+}
+
+.glow-b {
+  background: var(--ax-violet);
+}
+
+.research-window {
+  border-color: var(--ax-border);
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--ax-primary) 2%, transparent), transparent),
+    var(--ax-surface);
+  box-shadow: var(--ax-shadow-strong);
+}
+
+.window-topbar,
+.curve-stage,
+.flow-row {
+  border-color: var(--ax-border-subtle);
+}
+
+.window-topbar {
+  color: var(--ax-muted);
+}
+
+.window-dots i {
+  background: var(--ax-border);
+}
+
+.window-dots i:nth-child(2) {
+  background: var(--ax-border-strong);
+}
+
+.window-dots i:nth-child(3) {
+  background: color-mix(in srgb, var(--ax-primary) 35%, var(--ax-border));
+}
+
+.grid-lines path {
+  stroke: color-mix(in srgb, var(--ax-text) 9%, transparent);
+}
+
+.curve-caption .mono,
+.flow-row strong {
+  color: var(--ax-text);
+}
+
+.flow-icon {
+  background: var(--ax-surface-soft);
+  color: var(--ax-muted);
+}
+
+.evidence-tag,
+.ladder-class,
+.chip-row span {
+  border-color: var(--ax-border);
+  background: var(--ax-surface-soft);
+}
+
+.evidence-tag.heuristic {
+  color: var(--ax-amber);
+  border-color: color-mix(in srgb, var(--ax-amber) 28%, var(--ax-border));
+  background: var(--ax-amber-soft);
+}
+
+.evidence-tag.exact {
+  color: var(--ax-primary-deep);
+  border-color: color-mix(in srgb, var(--ax-primary) 28%, var(--ax-border));
+  background: var(--ax-primary-soft);
+}
+
+.evidence-tag.rigorous {
+  color: var(--ax-green);
+  border-color: color-mix(in srgb, var(--ax-green) 28%, var(--ax-border));
+  background: var(--ax-green-soft);
+}
+
+.evidence-tag.proof {
+  color: var(--ax-violet);
+  border-color: color-mix(in srgb, var(--ax-violet) 28%, var(--ax-border));
+  background: var(--ax-violet-soft);
+}
+
+/* Home sections */
+
+.signal-strip,
+.proof-section,
+.research-os,
+.catalog-note,
+.feature-principle,
+.feature-area-alt {
+  border-color: var(--ax-border);
+}
+
+.signal-strip {
+  background: color-mix(in srgb, var(--ax-surface) 60%, transparent);
+}
+
+.signal-grid > div {
+  border-color: var(--ax-border);
+}
+
+.signal-number {
+  color: var(--ax-text);
+}
+
+.feature-grid,
+.evidence-ladder,
+.contribute-grid,
+.workspace-row,
+.object-grid,
+.intent-map,
+.extend-grid {
+  border-color: var(--ax-border);
+  background: var(--ax-surface);
+  box-shadow: var(--ax-shadow);
+}
+
+.feature-card,
+.workspace-row article,
+.contribute-card,
+.plugin-stat,
+.research-points article,
+.capability-card,
+.reference-grid article,
+.extend-grid article,
+.object-grid article {
+  border-color: var(--ax-border);
+  background: var(--ax-surface);
+}
+
+.feature-card,
+.capability-card,
+.plugin-card {
+  background:
+    radial-gradient(circle at 100% 0, color-mix(in srgb, var(--ax-primary) 4%, transparent), transparent 13rem),
+    var(--ax-surface);
+}
+
+.feature-card.featured,
+.capability-card.spotlight {
+  background:
+    radial-gradient(circle at 92% 4%, color-mix(in srgb, var(--ax-primary) 8%, transparent), transparent 16rem),
+    linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--ax-primary) 4%, var(--ax-surface)),
+      var(--ax-surface)
+    );
+}
+
+.card-index {
+  color: var(--ax-muted-2);
+}
+
+.mini-list,
+.workspace-row h3,
+.contribute-card h3,
+.research-points h3 {
+  color: var(--ax-text-secondary);
+}
+
+.mini-list li::before {
+  background: var(--ax-primary);
+}
+
+.proof-section {
+  background:
+    radial-gradient(circle at 0 50%, color-mix(in srgb, var(--ax-violet) 5%, transparent), transparent 28rem),
+    var(--ax-surface-soft);
+}
+
+.proof-copy .large-copy {
+  color: var(--ax-text-secondary);
+}
+
+.evidence-ladder {
+  background: var(--ax-surface);
+}
+
+.ladder-row {
+  border-color: var(--ax-border);
+}
+
+.ladder-row.final {
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--ax-violet) 7%, var(--ax-surface)),
+    color-mix(in srgb, var(--ax-primary) 4%, var(--ax-surface))
+  );
+}
+
+.ladder-row strong {
+  color: var(--ax-text);
+}
+
+.ladder-dot.heuristic { color: var(--ax-amber); }
+.ladder-dot.exact { color: var(--ax-primary); }
+.ladder-dot.rigorous { color: var(--ax-green); }
+.ladder-dot.proof { color: var(--ax-violet); }
+
+.plugin-stat {
+  border-color: var(--ax-border);
+}
+
+.plugin-stat strong {
+  color: var(--ax-text);
+}
+
+.workspace-row article {
+  border-color: var(--ax-border);
+}
+
+.inline-cta,
+.feature-page-cta {
+  border-color: color-mix(in srgb, var(--ax-primary) 20%, var(--ax-border));
+  background: color-mix(in srgb, var(--ax-primary) 4%, var(--ax-surface));
+}
+
+.inline-cta strong,
+.feature-page-cta strong {
+  color: var(--ax-text);
+}
+
+.research-os {
+  background:
+    radial-gradient(circle at 100% 70%, color-mix(in srgb, var(--ax-primary) 5%, transparent), transparent 28rem),
+    var(--ax-surface-soft);
+}
+
+.research-icon {
+  background: var(--ax-primary-soft);
+  color: var(--ax-primary);
+}
+
+.final-cta-inner {
+  border-color: color-mix(in srgb, var(--ax-primary) 22%, var(--ax-border));
+  background:
+    radial-gradient(circle at 88% 15%, color-mix(in srgb, var(--ax-violet) 8%, transparent), transparent 22rem),
+    radial-gradient(circle at 8% 90%, color-mix(in srgb, var(--ax-primary) 7%, transparent), transparent 18rem),
+    var(--ax-surface);
+  box-shadow: var(--ax-shadow-strong);
+}
+
+.site-footer {
+  border-color: var(--ax-border);
+  background: var(--ax-nav);
+}
+
+.footer-inner > p {
+  color: var(--ax-muted);
+}
+
+.footer-links a {
+  color: var(--ax-text-secondary);
+}
+
+.footer-links a:hover {
+  color: var(--ax-primary-deep);
+}
+
+/* Plugin catalog */
+
+.catalog-tools-shell {
+  border-color: var(--ax-border);
+  background: color-mix(in srgb, var(--ax-nav) 94%, transparent);
+}
+
+.catalog-summary,
+.plugin-card {
+  border-color: var(--ax-border);
+  background: var(--ax-surface);
+  box-shadow: var(--ax-shadow);
+}
+
+.catalog-summary div {
+  border-color: var(--ax-border);
+}
+
+.catalog-summary strong,
+.plugin-card h3,
+.no-results strong,
+.catalog-note h2,
+.catalog-note h3 {
+  color: var(--ax-text);
+}
+
+.catalog-summary span,
+.plugin-version,
+.catalog-status,
+.plugin-search input::placeholder {
+  color: var(--ax-muted);
+}
+
+.plugin-search input {
+  border-color: var(--ax-control-border);
+  background: var(--ax-surface);
+  color: var(--ax-text);
+  box-shadow: 0 1px 2px rgba(31,45,75,.035);
+}
+
+.plugin-search svg {
+  stroke: var(--ax-muted);
+}
+
+.plugin-search input:focus {
+  border-color: var(--ax-primary);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--ax-primary) 10%, transparent);
+}
+
+.filter-button {
+  border-color: var(--ax-border);
+  background: var(--ax-surface);
+  color: var(--ax-text-secondary);
+}
+
+.filter-button:hover,
+.filter-button.active {
+  border-color: color-mix(in srgb, var(--ax-primary) 40%, var(--ax-border));
+  background: var(--ax-primary-soft);
+  color: var(--ax-primary-deep);
+}
+
+.filter-button.active span {
+  color: var(--ax-primary);
+}
+
+.plugin-card:hover {
+  border-color: color-mix(in srgb, var(--ax-primary) 34%, var(--ax-border));
+  background:
+    radial-gradient(circle at 100% 0, color-mix(in srgb, var(--ax-primary) 6%, transparent), transparent 13rem),
+    var(--ax-surface);
+  box-shadow: var(--ax-shadow-strong);
+}
+
+.plugin-card.workspace-card {
+  background:
+    radial-gradient(circle at 100% 0, color-mix(in srgb, var(--ax-violet) 7%, transparent), transparent 13rem),
+    var(--ax-surface);
+}
+
+.plugin-type.family {
+  color: var(--ax-primary-deep);
+  border-color: color-mix(in srgb, var(--ax-primary) 24%, var(--ax-border));
+  background: var(--ax-primary-soft);
+}
+
+.plugin-type.feature {
+  color: var(--ax-green);
+  border-color: color-mix(in srgb, var(--ax-green) 24%, var(--ax-border));
+  background: var(--ax-green-soft);
+}
+
+.plugin-type.workspace {
+  color: var(--ax-violet);
+  border-color: color-mix(in srgb, var(--ax-violet) 24%, var(--ax-border));
+  background: var(--ax-violet-soft);
+}
+
+.no-results {
+  border-color: var(--ax-border-strong);
+  color: var(--ax-text-secondary);
+}
+
+.catalog-note {
+  background:
+    radial-gradient(circle at 0 50%, color-mix(in srgb, var(--ax-violet) 5%, transparent), transparent 24rem),
+    var(--ax-surface-soft);
+}
+
+/* Features page */
+
+.intent-map a {
+  border-color: var(--ax-border);
+}
+
+.intent-map a:hover {
+  background: var(--ax-primary-soft);
+}
+
+.intent-map span,
+.area-number,
+.reference-symbol {
+  color: var(--ax-primary);
+}
+
+.intent-map strong,
+.area-heading h2,
+.capability-card h3,
+.reference-grid h3,
+.extend-grid h3,
+.object-grid strong,
+.proof-flow strong {
+  color: var(--ax-text);
+}
+
+.feature-principle,
+.feature-area-alt {
+  background:
+    radial-gradient(circle at 85% 40%, color-mix(in srgb, var(--ax-primary) 4%, transparent), transparent 24rem),
+    var(--ax-surface-soft);
+}
+
+.principle-grid h2 {
+  color: var(--ax-text);
+}
+
+.principle-grid > p {
+  color: var(--ax-text-secondary);
+}
+
+.area-number,
+.reference-symbol {
+  border-color: color-mix(in srgb, var(--ax-primary) 22%, var(--ax-border));
+  background: var(--ax-primary-soft);
+}
+
+.chip-row span {
+  color: var(--ax-muted);
+}
+
+.proof-flow article {
+  border-color: var(--ax-border);
+  background: var(--ax-surface);
+  box-shadow: var(--ax-shadow);
+}
+
+.proof-flow article.proof-final {
+  border-color: color-mix(in srgb, var(--ax-violet) 28%, var(--ax-border));
+  background: var(--ax-violet-soft);
+}
+
+.proof-flow > i {
+  color: var(--ax-muted-2);
+}
+
+.proof-flow span {
+  color: var(--ax-primary);
+}
+
+.proof-flow article:nth-of-type(2) span,
+.proof-flow article:nth-of-type(3) span {
+  color: var(--ax-green);
+}
+
+.proof-flow .proof-final span {
+  color: var(--ax-violet);
+}
+
+.extend-grid span {
+  color: var(--ax-violet);
+}
+
+/* Light-mode polish: keep the site airy like the Axiom application. */
+
+html:not([data-theme="dark"]) .visual-glow {
+  opacity: .07;
+}
+
+html:not([data-theme="dark"]) .research-window,
+html:not([data-theme="dark"]) .feature-grid,
+html:not([data-theme="dark"]) .evidence-ladder,
+html:not([data-theme="dark"]) .workspace-row,
+html:not([data-theme="dark"]) .contribute-grid,
+html:not([data-theme="dark"]) .plugin-card,
+html:not([data-theme="dark"]) .plugin-stat,
+html:not([data-theme="dark"]) .capability-card,
+html:not([data-theme="dark"]) .reference-grid article,
+html:not([data-theme="dark"]) .intent-map,
+html:not([data-theme="dark"]) .proof-flow article {
+  box-shadow: 0 7px 22px rgba(31, 45, 75, .045);
+}
+
+/* Mobile navigation: keep the theme switch available even when links collapse. */
+
+@media (max-width: 760px) {
+  .site-nav {
+    gap: .5rem;
+  }
+
+  .theme-toggle-label {
+    display: none;
+  }
+
+  .theme-toggle {
+    min-width: 2.45rem;
+    padding-left: .55rem;
+    padding-right: .55rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .theme-toggle {
+    display: inline-flex;
+  }
+}
+
+
+/* Pipeline showcase + deep-dive Axiom surfaces */
+
+.pipeline-showcase,
+.pipeline-deep-dive {
+  border-color: var(--ax-border);
+  background:
+    radial-gradient(circle at 88% 18%, color-mix(in srgb, var(--ax-primary) 6%, transparent), transparent 26rem),
+    var(--ax-surface-soft);
+}
+
+.pipeline-copy h2,
+.pipeline-copy strong,
+.pipeline-visual-head,
+.pipeline-stage strong,
+.pipeline-target-grid strong,
+.module-wall-count,
+.module-wall-copy h3,
+.module-groups strong,
+.pipeline-trust-grid h3 {
+  color: var(--ax-text);
+}
+
+.pipeline-copy > p,
+.pipeline-copy .pipeline-lede,
+.pipeline-stage small,
+.pipeline-target-grid p,
+.module-wall-copy > p:last-child,
+.module-groups span,
+.pipeline-trust-grid p {
+  color: var(--ax-text-secondary);
+}
+
+.pipeline-builder-visual,
+.pipeline-target-grid,
+.module-wall-copy,
+.module-groups,
+.pipeline-trust-grid article {
+  border-color: var(--ax-border);
+  background: var(--ax-surface);
+  box-shadow: var(--ax-shadow);
+}
+
+.pipeline-visual-head,
+.pipeline-targets,
+.pipeline-categories,
+.pipeline-stage,
+.pipeline-target-grid article,
+.module-groups div {
+  border-color: var(--ax-border);
+}
+
+.pipeline-targets span,
+.pipeline-categories span,
+.pipeline-stage {
+  border-color: var(--ax-border);
+  background: var(--ax-surface-soft);
+}
+
+.pipeline-targets span:first-child {
+  color: var(--ax-primary-deep);
+  border-color: color-mix(in srgb, var(--ax-primary) 28%, var(--ax-border));
+  background: var(--ax-primary-soft);
+}
+
+.pipeline-module-count,
+.stage-kind,
+.pipeline-target-grid span,
+.pipeline-trust-grid span {
+  color: var(--ax-primary);
+}
+
+.pipeline-stage-final {
+  border-color: color-mix(in srgb, var(--ax-violet) 28%, var(--ax-border));
+  background: var(--ax-violet-soft);
+}
+
+.pipeline-arrow {
+  color: var(--ax-muted-2);
+}
+
+html:not([data-theme="dark"]) .pipeline-builder-visual,
+html:not([data-theme="dark"]) .pipeline-target-grid,
+html:not([data-theme="dark"]) .module-wall-copy,
+html:not([data-theme="dark"]) .module-groups,
+html:not([data-theme="dark"]) .pipeline-trust-grid article {
+  box-shadow: 0 7px 22px rgba(31, 45, 75, .045);
+}
+
+
+/* Serious research instrument surfaces */
+
+.research-instruments {
+  border-color: var(--ax-border);
+  background:
+    radial-gradient(circle at 8% 10%, color-mix(in srgb, var(--ax-primary) 4%, transparent), transparent 25rem),
+    var(--ax-surface-soft);
+}
+
+.instrument-card,
+.instrument-proof-stack,
+.lattice-sketch div,
+.quartic-sketch,
+.library-flow,
+.proof-boundary-note,
+.library-boundary > div {
+  border-color: var(--ax-border);
+  background: var(--ax-surface);
+}
+
+.instrument-card {
+  box-shadow: var(--ax-shadow);
+}
+
+.instrument-index {
+  border-color: color-mix(in srgb, var(--ax-primary) 22%, var(--ax-border));
+  background: var(--ax-primary-soft);
+  color: var(--ax-primary);
+}
+
+.instrument-kicker,
+.library-boundary span {
+  color: var(--ax-primary);
+}
+
+.instrument-card h3,
+.lattice-sketch strong,
+.quartic-sketch span,
+.library-flow-row span,
+.library-boundary strong {
+  color: var(--ax-text);
+}
+
+.instrument-card > p,
+.lattice-sketch span,
+.proof-boundary-note span {
+  color: var(--ax-text-secondary);
+}
+
+.instrument-proof-stack,
+.lattice-sketch div,
+.quartic-sketch,
+.library-flow {
+  background: var(--ax-surface-soft);
+}
+
+.proof-chip {
+  border-color: var(--ax-border);
+}
+
+.proof-chip.heuristic {
+  color: var(--ax-amber);
+  background: var(--ax-amber-soft);
+}
+
+.proof-chip.exact {
+  color: var(--ax-primary-deep);
+  background: var(--ax-primary-soft);
+}
+
+.proof-chip.rigorous {
+  color: var(--ax-green);
+  background: var(--ax-green-soft);
+}
+
+.proof-chip.proof {
+  color: var(--ax-violet);
+  background: var(--ax-violet-soft);
+}
+
+.instrument-note {
+  color: var(--ax-amber);
+}
+
+.proof-boundary-note strong {
+  color: var(--ax-green);
+}
+
+.library-boundary-middle {
+  background: var(--ax-primary-soft) !important;
+  border-color: color-mix(in srgb, var(--ax-primary) 28%, var(--ax-border)) !important;
+}
+
+html:not([data-theme="dark"]) .instrument-card,
+html:not([data-theme="dark"]) .proof-boundary-note,
+html:not([data-theme="dark"]) .library-boundary > div {
+  box-shadow: 0 7px 22px rgba(31, 45, 75, .045);
+}
+
+
+/* Rank Hunter logo wordmark */
+
+.brand-wordmark {
+  color: var(--ax-text);
+}
+
+.nav-disabled {
+  color: var(--ax-muted);
+}
+
+.download-terminal,
+.install-card,
+.lite-command,
+.download-detail-grid article {
+  border-color: var(--ax-border);
+  background: var(--ax-surface);
+}
+
+.download-terminal,
+.install-card,
+.lite-command,
+.download-detail-grid article {
+  box-shadow: var(--ax-shadow);
+}
+
+.terminal-bar,
+.install-card pre,
+.lite-command pre {
+  border-color: var(--ax-border);
+}
+
+.install-card pre,
+.lite-command pre {
+  background: var(--ax-surface-soft);
+}
+
+.download-lede,
+.install-card p,
+.lite-grid p,
+.download-detail-grid p {
+  color: var(--ax-text-secondary);
+}
+
+.download-hero h1,
+.install-card h3,
+.lite-grid h2,
+.download-detail-grid strong {
+  color: var(--ax-text);
+}
+
+.download-hero h1 span {
+  background: linear-gradient(90deg, var(--ax-primary-deep), var(--ax-blue-500) 58%, var(--ax-violet));
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+
+/* Download platform guidance */
+
+.platform-section {
+  border-color: var(--ax-border);
+  background:
+    radial-gradient(circle at 82% 12%, color-mix(in srgb, var(--ax-primary) 5%, transparent), transparent 24rem),
+    var(--ax-surface-soft);
+}
+
+.platform-card,
+.platform-note {
+  border-color: var(--ax-border);
+  background: var(--ax-surface);
+  box-shadow: var(--ax-shadow);
+}
+
+.platform-card pre,
+.platform-command-group pre {
+  border-color: var(--ax-border);
+  background: var(--ax-surface-soft);
+}
+
+.platform-card-head strong {
+  color: var(--ax-text);
+}
+
+.platform-card > p,
+.platform-note p {
+  color: var(--ax-text-secondary);
+}
+
+.platform-badge {
+  color: var(--ax-primary-deep);
+  border-color: color-mix(in srgb, var(--ax-primary) 28%, var(--ax-border));
+  background: var(--ax-primary-soft);
+}
+
+.platform-note strong {
+  color: var(--ax-green);
+}
+
+html:not([data-theme="dark"]) .platform-card,
+html:not([data-theme="dark"]) .platform-note {
+  box-shadow: 0 7px 22px rgba(31, 45, 75, .045);
+}
+
+
+/* Active navigation state */
+
+.site-nav a:not(.nav-cta)[aria-current="page"] {
+  color: var(--ax-primary-deep);
+}
+
+.site-nav .nav-cta[aria-current="page"] {
+  border-color: color-mix(in srgb, var(--ax-primary) 62%, var(--ax-border));
+  background: var(--ax-primary-soft);
+  color: var(--ax-primary-deep);
+}
+
+.theme-toggle {
+  border-color: var(--ax-border-strong);
+  background: var(--ax-surface);
+}
+
+
+/* Minimal moon-only appearance toggle */
+
+.theme-toggle,
+.theme-toggle:hover {
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.theme-toggle-icon {
+  color: var(--ax-muted);
+}
+
+.theme-toggle[aria-pressed="true"] .theme-toggle-icon {
+  color: var(--ax-primary-deep);
+  text-shadow: 0 0 14px color-mix(in srgb, var(--ax-primary) 24%, transparent);
+}
+
+
+/* Real product screenshot surfaces */
+
+.product-shot-frame,
+.pipeline-product-shot {
+  border-color: var(--ax-border);
+  background: var(--ax-surface);
+  box-shadow: var(--ax-shadow-strong);
+}
+
+.product-shot-bar,
+.pipeline-shot-viewport {
+  border-color: var(--ax-border);
+}
+
+.product-shot-bar {
+  color: var(--ax-text);
+  background: var(--ax-surface);
+}
+
+.product-shot-meta,
+.product-shot-caption,
+.footer-license {
+  color: var(--ax-muted) !important;
+}
+
+.product-shot-viewport,
+.pipeline-shot-viewport {
+  background: var(--ax-surface-soft);
+}
+
+html:not([data-theme="dark"]) .product-shot-frame,
+html:not([data-theme="dark"]) .pipeline-product-shot {
+  box-shadow:
+    0 24px 54px rgba(31, 45, 75, .10),
+    0 7px 18px rgba(31, 45, 75, .05);
+}
+
+
+/* 2026-10-04 final hero + moon treatment */
+
+.site-nav .theme-toggle {
+  width: 3rem;
+  min-width: 3rem;
+  height: 3rem;
+  min-height: 3rem;
+  padding: 0;
+  border: 0 !important;
+  border-radius: 0;
+  background: transparent !important;
+  color: var(--ax-text);
+  box-shadow: none !important;
+}
+
+.site-nav .theme-toggle:hover,
+.site-nav .theme-toggle:active {
+  border: 0 !important;
+  background: transparent !important;
+  color: var(--ax-primary);
+  box-shadow: none !important;
+}
+
+.site-nav .theme-toggle-icon {
+  width: auto;
+  height: auto;
+  color: currentColor;
+  font-size: 2rem;
+  line-height: 1;
+  transform: rotate(-22deg) translateY(-1px);
+  transform-origin: center;
+  transition: transform .18s ease, color .18s ease, opacity .18s ease;
+}
+
+.site-nav .theme-toggle:hover .theme-toggle-icon {
+  transform: rotate(-30deg) translateY(-1px) scale(1.06);
+}
+
+.site-nav .theme-toggle[aria-pressed="false"] .theme-toggle-icon {
+  opacity: .72;
+}
+
+.site-nav .theme-toggle[aria-pressed="true"] .theme-toggle-icon {
+  opacity: 1;
+  color: var(--ax-primary);
+}
+
+.hero-pillars span {
+  color: var(--ax-text-secondary);
+}
+
+.hero-pillars,
+.hero-pillars span + span {
+  border-color: var(--ax-border);
+}
+
+.hero-pillars i {
+  background: var(--ax-primary);
+  box-shadow: 0 0 0 .22rem color-mix(in srgb, var(--ax-primary) 8%, transparent);
+}
+
+.hero-linux-link {
+  color: var(--ax-muted);
+}
+
+.hero-linux-link:hover {
+  color: var(--ax-primary-deep);
+}
+
+.dashboard-crop-viewport {
+  background: var(--ax-surface-soft);
+}
+
+.dashboard-shot {
+  border-color: var(--ax-border);
+  background: var(--ax-surface);
+  box-shadow: var(--ax-shadow-strong);
+}
+
+html:not([data-theme="dark"]) .dashboard-shot {
+  box-shadow:
+    0 24px 54px rgba(31, 45, 75, .10),
+    0 7px 18px rgba(31, 45, 75, .05);
+}
+
+@media (max-width: 760px) {
+  .site-nav .theme-toggle {
+    width: 2.6rem;
+    min-width: 2.6rem;
+    height: 2.6rem;
+    min-height: 2.6rem;
+  }
+
+  .site-nav .theme-toggle-icon {
+    font-size: 1.75rem;
+  }
+}
+
+
+/* SVG crescent theme control */
+.site-nav .theme-toggle-icon {
+  display: block;
+  width: 1.85rem;
+  height: 1.85rem;
+  overflow: visible;
+  color: currentColor;
+  transform: rotate(-18deg);
+  transform-origin: 50% 50%;
+}
+
+.site-nav .theme-toggle:hover .theme-toggle-icon {
+  transform: rotate(-24deg) scale(1.06);
+}
+
+@media (max-width: 760px) {
+  .site-nav .theme-toggle-icon {
+    width: 1.65rem;
+    height: 1.65rem;
+  }
+}
+
+
+/* Pipeline module explorer */
+.pipeline-module-explorer {
+  border-color: var(--ax-border);
+  background: var(--ax-surface);
+  box-shadow: var(--ax-shadow);
+}
+
+.pipeline-module-card {
+  border-color: var(--ax-border);
+  background: var(--ax-surface-soft);
+}
+
+.module-explorer-head,
+.module-filter-bar {
+  border-color: var(--ax-border);
+}
+
+.module-explorer-kicker,
+.pipeline-module-card > span {
+  color: var(--ax-primary);
+}
+
+.module-explorer-head strong,
+.pipeline-module-card strong {
+  color: var(--ax-text);
+}
+
+.pipeline-module-card p {
+  color: var(--ax-text-secondary);
+}
+
+.module-filter {
+  border-color: var(--ax-border);
+  background: var(--ax-surface-soft);
+  color: var(--ax-muted);
+}
+
+.module-filter:hover {
+  color: var(--ax-text);
+  border-color: color-mix(in srgb, var(--ax-primary) 30%, var(--ax-border));
+}
+
+.module-filter.is-active {
+  color: var(--ax-primary-deep);
+  border-color: color-mix(in srgb, var(--ax-primary) 30%, var(--ax-border));
+  background: var(--ax-primary-soft);
+}
+
+.module-filter:focus-visible {
+  outline-color: color-mix(in srgb, var(--ax-primary) 26%, transparent);
+}
+
+.pipeline-module-list::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--ax-muted) 46%, transparent);
+  background-clip: padding-box;
+}
+
+html:not([data-theme="dark"]) .pipeline-module-explorer {
+  box-shadow: 0 14px 36px rgba(31, 45, 75, .07);
+}

@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Elliptic Curve Research Capabilities — Rank Hunter</title>
+  <meta name="description" content="Explore Rank Hunter capabilities for elliptic curve search, exact rational points, rank proof, descent, quartics, lattices, pipelines, and reproducible research.">
+  <meta name="theme-color" content="#F4F6FA">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <script src="../assets/theme.js"></script>
+  <link rel="stylesheet" href="../assets/site.css">
+  <link rel="stylesheet" href="../assets/features.css">
+  <link rel="stylesheet" href="../assets/axiom.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="../" aria-label="Rank Hunter home">
+        <img class="brand-logo" src="../assets/rank-hunter-logo.svg" alt="" aria-hidden="true">
+        <span class="brand-wordmark">Rank Hunter</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="../capabilities/" aria-current="page">Capabilities</a>
+        <a href="../plugins/">Plugins</a>
+        <a class="nav-cta" href="../download/">Download</a>
+        <a class="nav-optional" href="https://docs.rankhunter.net" target="_blank" rel="noopener">Docs</a>
+        <a class="nav-optional" href="../#involved">Get Involved</a>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Dark appearance off" aria-pressed="false" title="Toggle dark appearance">
+          <svg class="theme-toggle-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <defs>
+              <mask id="rank-hunter-crescent">
+                <rect width="24" height="24" fill="white"/>
+                <circle cx="15.6" cy="8.4" r="8.3" fill="black"/>
+              </mask>
+            </defs>
+            <circle cx="11.1" cy="12.1" r="9.1" fill="currentColor" mask="url(#rank-hunter-crescent)"/>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="features-hero section-shell">
+      <div class="features-hero-copy">
+        <p class="eyebrow">Everything in one research loop</p>
+        <h1>From search to <span>proof.</span></h1>
+        <p>
+          You should not have to remember which script owns candidate generation, which tool found
+          a point, where a descent result went, or what still needs proving. Rank Hunter organizes
+          the work around the curve and the question you are trying to answer.
+        </p>
+      </div>
+
+      <div class="intent-map" aria-label="Rank Hunter capability areas">
+        <a href="#discover"><span>01</span><strong>Discover</strong><small>Where should I look?</small></a>
+        <a href="#investigate"><span>02</span><strong>Investigate</strong><small>What is happening here?</small></a>
+        <a href="#prove"><span>03</span><strong>Prove</strong><small>What can I claim?</small></a>
+        <a href="#organize"><span>04</span><strong>Organize</strong><small>How do I reproduce this?</small></a>
+        <a href="#reference"><span>05</span><strong>Reference</strong><small>What is already known?</small></a>
+        <a href="#extend"><span>06</span><strong>Extend</strong><small>How do I add my mathematics?</small></a>
+      </div>
+    </section>
+
+    <section class="feature-principle">
+      <div class="section-shell principle-grid">
+        <div>
+          <p class="eyebrow">The basic idea</p>
+          <h2>Simple design.<br>Serious math.</h2>
+        </div>
+        <p>
+          Rank Hunter does not hide the evidence model, but it does hide unnecessary plumbing.
+          A researcher can move from a promising family specialization to exact points, rigorous
+          lower bounds, descent, geometry, and reproducible history without stitching together
+          a pile of disconnected one-off scripts.
+        </p>
+      </div>
+    </section>
+
+    <section id="discover" class="feature-area section-shell">
+      <div class="area-heading">
+        <div class="area-number">01</div>
+        <div>
+          <p class="eyebrow">Discover</p>
+          <h2>Search where the mathematics says to look.</h2>
+          <p>
+            Start broad, specialize a published family, use a prepared Pipeline, or go straight
+            after one retained curve. Heuristics help decide where to spend time; exact arithmetic
+            still decides what gets accepted.
+          </p>
+        </div>
+      </div>
+
+      <div class="capability-grid">
+        <article class="capability-card spotlight">
+          <span class="capability-label">Search</span>
+          <h3>Auto, Family, General, and Target search</h3>
+          <p>
+            Launch search work through shared Pipeline infrastructure instead of separate ad-hoc engines.
+            Family plugins can contribute exact specialization logic and search geometry without moving
+            that mathematics into core.
+          </p>
+          <div class="chip-row"><span>Auto</span><span>Family</span><span>Target</span><span>Pipeline-owned</span></div>
+        </article>
+
+        <article class="capability-card">
+          <span class="capability-label">Candidates</span>
+          <h3>Generate once. Screen repeatedly.</h3>
+          <p>
+            Candidate pools preserve ranking provenance, screening state, and later search handoff so
+            promising fibers do not disappear into terminal scrollback.
+          </p>
+          <div class="chip-row"><span>Generate</span><span>Pools</span><span>Resume</span></div>
+        </article>
+
+        <article class="capability-card">
+          <span class="capability-label">Point discovery</span>
+          <h3>CPU, GPU, quartics, coverings.</h3>
+          <p>
+            Route rational-point searches through compatible engines, including CPU/GPU ratpoints,
+            completed-square cubic models, pointed quartics, and classical covering paths.
+          </p>
+          <div class="chip-row"><span>ratpoints</span><span>GPU</span><span>Quartics</span><span>Coverings</span></div>
+        </article>
+
+        <article class="capability-card">
+          <span class="capability-label">Heuristics</span>
+          <h3>Use signals without confusing them for proof.</h3>
+          <p>
+            Nagao-style scores, root-number information, numerical geometry, local patterns, and search
+            history can prioritize work while remaining explicitly non-rigorous where appropriate.
+          </p>
+          <div class="chip-row"><span>Nagao</span><span>Root number</span><span>Numerical screens</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="pipelines" class="pipeline-deep-dive">
+      <div class="section-shell">
+        <div class="area-heading pipeline-heading">
+          <div class="area-number">P</div>
+          <div>
+            <p class="eyebrow">Pipelines</p>
+            <h2>Build your own elliptic-curve research machine.</h2>
+            <p>
+              Pipelines are Rank Hunter's modular strategy builder. Choose what kind of
+              population you are working on, then assemble the exact sequence of scientific
+              stages you want Rank Hunter to execute and preserve.
+            </p>
+          </div>
+        </div>
+
+        <div class="pipeline-target-grid">
+          <article><span>Target mode</span><strong>Family</strong><p>Run against a plugin-backed family or an existing family candidate pool.</p></article>
+          <article><span>Target mode</span><strong>Torsion Group</strong><p>Build around a prescribed rational torsion target with compatible providers.</p></article>
+          <article><span>Target mode</span><strong>General Curves</strong><p>Start from General curve populations without a family dependency.</p></article>
+          <article><span>Target mode</span><strong>Target Curve</strong><p>Turn one retained curve into the starting point for a deeper modular attack.</p></article>
+        </div>
+
+        <div class="pipeline-module-wall">
+          <div class="module-wall-copy">
+            <p class="eyebrow">Current core catalog</p>
+            <strong class="module-wall-count">63</strong>
+            <h3>scientific modules</h3>
+            <p>
+              The builder validates stage contracts and ordering. A module advertises what kind
+              of evidence or population it can produce; runtime success is never assumed.
+            </p>
+          </div>
+
+          <div class="module-groups">
+            <div><strong>Candidates</strong><span>Nagao Screen · Nagao Rescore · Library Filter</span></div>
+            <div><strong>Transforms</strong><span>Quadratic twists · rank-jump/base-change · Möbius transforms · isogeny walks · fibration switches</span></div>
+            <div><strong>Arithmetic</strong><span>Selmer/covering branches · exact torsion · class-group bounds · Cassels–Tate refinement · isogeny descent</span></div>
+            <div><strong>Constructive</strong><span>Section shells · trace sections · forced division · square-condition specialization</span></div>
+            <div><strong>Strategies</strong><span>Constructive rank-jump loop · upper-bound rescue · large-height generator hunt · Record Breaker Lane</span></div>
+            <div><strong>Primes</strong><span>Frobenius tables · multi-scale signals · local root numbers · bad-prime fingerprints · local sieves</span></div>
+            <div><strong>Points</strong><span>Native seeds · affine search · denominator bands · point-yield persistence</span></div>
+            <div><strong>Geometry</strong><span>Coverings · descent ladders · p-adic search · point-centered quartics · MW Growth Loop</span></div>
+            <div><strong>Evidence</strong><span>Exact Independence · Saturation · height-lattice reduction · final rigorous upper</span></div>
+            <div><strong>Control</strong><span>Select Survivors · Adaptive Denominator Ladder · Stop at Rank Goal</span></div>
+          </div>
+        </div>
+
+        <div class="pipeline-trust-grid">
+          <article>
+            <span>Saved definitions</span>
+            <h3>Research recipes, not button-memory</h3>
+            <p>Save a working strategy, duplicate it, change the target or budgets, and keep the scientific plan explicit.</p>
+          </article>
+          <article>
+            <span>Durable runs</span>
+            <h3>Runs preserve what actually happened</h3>
+            <p>Pipeline Runs keep execution state, derivations, candidates, runtime drift, and reproducibility context attached to the run.</p>
+          </article>
+          <article>
+            <span>Resume-aware</span>
+            <h3>Deep strategies can checkpoint their own work</h3>
+            <p>Supported strategy modules preserve completed substeps so interrupted work can continue from the first unfinished checkpoint instead of blindly starting over.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="investigate" class="feature-area feature-area-alt">
+      <div class="section-shell">
+        <div class="area-heading">
+          <div class="area-number">02</div>
+          <div>
+            <p class="eyebrow">Investigate</p>
+            <h2>Stay with the curve when things get interesting.</h2>
+            <p>
+              Rank Hunter keeps arithmetic, points, search history, geometry, research context, and
+              next-step planning attached to the same retained object.
+            </p>
+          </div>
+        </div>
+
+        <div class="capability-grid">
+          <article class="capability-card spotlight">
+            <span class="capability-label">Target Search</span>
+            <h3>Deep investigation of one retained curve</h3>
+            <p>
+              Escalate exact point discovery around a specific curve, preserve existing rigorous evidence,
+              and keep failed or timed-out engines classified as inconclusive rather than destructive.
+            </p>
+            <div class="chip-row"><span>Large curves</span><span>Exact points</span><span>Escalation</span></div>
+          </article>
+
+          <article class="capability-card">
+            <span class="capability-label">Curves</span>
+            <h3>The retained curve is the research hub</h3>
+            <p>
+              Review the stored model, arithmetic summary, rigorous evidence, heuristic signals,
+              exact-point ledger, catalog context, provenance, history, and the next useful action
+              from one curve-centered view.
+            </p>
+            <div class="chip-row"><span>Evidence</span><span>Arithmetic</span><span>History</span><span>Actions</span></div>
+          </article>
+
+          <article class="capability-card" id="lattices">
+            <span class="capability-label">Lattices</span>
+            <h3>Inspect generator geometry without pretending it is proof</h3>
+            <p>
+              Analyze canonical-height Gram matrices, generator correlations, eigenvalue strength,
+              LLL-reduced bases, candidate residuals, and stored lattice runs. Numerical geometry
+              can guide Target and Independence, but it never promotes rank by itself.
+            </p>
+            <div class="chip-row"><span>Canonical heights</span><span>LLL</span><span>Generator geometry</span><span>Numerical evidence</span></div>
+          </article>
+
+          <article class="capability-card" id="quartics">
+            <span class="capability-label">Quartics</span>
+            <h3>A persisted geometric point-search workbench</h3>
+            <p>
+              Use pointed quartics, exact quartic-to-elliptic maps, PARI reduction, and resumable searches
+              inside the same evidence workflow used elsewhere in Rank Hunter.
+            </p>
+            <div class="chip-row"><span>Pointed quartics</span><span>PARI</span><span>Resumable</span></div>
+          </article>
+
+          <article class="capability-card">
+            <span class="capability-label">Workspaces</span>
+            <h3>Specialized research instruments when core should stay generic</h3>
+            <p>
+              Open plugin-owned tools such as Curve Explorer, Fiber Atlas, Leaderboard Compare,
+              and Twist &amp; Isogeny Lab without weakening core evidence boundaries.
+            </p>
+            <div class="chip-row"><span>Curve Explorer</span><span>Fiber Atlas</span><span>Twists</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="prove" class="feature-area section-shell">
+      <div class="area-heading">
+        <div class="area-number">03</div>
+        <div>
+          <p class="eyebrow">Prove</p>
+          <h2>Make the evidence climb before the claim does.</h2>
+          <p>
+            Rank Hunter separates exact points, rigorous independence, lower bounds, upper bounds,
+            saturation, and exact rank so that a promising computation never quietly becomes a theorem.
+          </p>
+        </div>
+      </div>
+
+      <div class="proof-flow" aria-label="Rank Hunter proof flow">
+        <article>
+          <span>Exact</span>
+          <strong>Rational point</strong>
+          <p>Verify the coordinates exactly on the stored elliptic curve.</p>
+        </article>
+        <i aria-hidden="true">→</i>
+        <article>
+          <span>Rigorous</span>
+          <strong>Independent directions</strong>
+          <p>Certify enough independent points to establish a lower bound.</p>
+        </article>
+        <i aria-hidden="true">→</i>
+        <article>
+          <span>Rigorous</span>
+          <strong>Upper bound</strong>
+          <p>Use supported descent/rank-bound engines under explicit time limits.</p>
+        </article>
+        <i aria-hidden="true">→</i>
+        <article class="proof-final">
+          <span>Proof</span>
+          <strong>Exact rank</strong>
+          <p>Record exact rank only when rigorous lower and upper bounds meet.</p>
+        </article>
+      </div>
+
+      <div class="proof-boundary-note">
+        <strong>Scientific boundary:</strong>
+        <span>
+          heuristic signals schedule work; exact point verification establishes a point;
+          Independence can raise the rigorous lower bound; Descent can establish a rigorous upper;
+          conditional analytic bounds remain conditional; timeouts and failed engines remain inconclusive.
+        </span>
+      </div>
+
+      <div class="capability-grid proof-cards">
+        <article class="capability-card">
+          <span class="capability-label">Independence</span>
+          <h3>Exact directions, not just lots of points</h3>
+          <p>
+            Resolve point dependence and certify new Mordell–Weil directions before increasing a rigorous lower bound.
+          </p>
+        </article>
+
+        <article class="capability-card">
+          <span class="capability-label">Descent</span>
+          <h3>Close the rigorous rank interval</h3>
+          <p>
+            Run bounded rigorous rank-bound methods, inspect structured engine evidence, escalate when stronger
+            budgets are justified, and attempt exact-rank certification only when the current evidence supports it.
+          </p>
+        </article>
+
+        <article class="capability-card">
+          <span class="capability-label">Saturation</span>
+          <h3>Track subgroup index without inventing rank</h3>
+          <p>
+            Record bounded saturation evidence separately. A nontrivial saturation index changes subgroup index/basis, not rank.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="organize" class="feature-area feature-area-alt">
+      <div class="section-shell">
+        <div class="area-heading">
+          <div class="area-number">04</div>
+          <div>
+            <p class="eyebrow">Organize</p>
+            <h2>Research should survive a reboot.</h2>
+            <p>
+              Rank Hunter treats execution history, evidence, retained curves, and reproducibility metadata
+              as part of the research instrument rather than administrative leftovers.
+            </p>
+          </div>
+        </div>
+
+        <div class="object-grid">
+          <article><strong>Campaigns</strong><p>Group related work under one durable research context.</p></article>
+          <article><strong>Pipelines</strong><p>Compose, save, run, inspect, duplicate, and reproduce modular scientific strategies.</p></article>
+          <article><strong>Jobs</strong><p>Own queue, dispatcher, scheduler, lifecycle, results, pause, stop, resume, and retry.</p></article>
+          <article><strong>Candidates</strong><p>Keep generation, ranking provenance, screening, and search handoff durable.</p></article>
+          <article><strong>Curves</strong><p>Retain the authoritative scientific record and research state for each curve.</p></article>
+          <article><strong>Evidence</strong><p>Persist exact points, bounds, proof state, provenance, and reproducibility metadata.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="reference" class="feature-area section-shell">
+      <div class="area-heading">
+        <div class="area-number">05</div>
+        <div>
+          <p class="eyebrow">Reference</p>
+          <h2>Bring the research mess. Keep the evidence clean.</h2>
+          <p>
+            Old curve lists, exported spreadsheets, certificates, notes, historical results, and reference
+            datasets can stay available to Rank Hunter without being silently promoted into your authoritative
+            local evidence. Browse it, compare it, seed new work from it — then let Rank Hunter reproduce what matters.
+          </p>
+        </div>
+      </div>
+
+      <div class="library-boundary">
+        <div>
+          <span>Outside Rank Hunter</span>
+          <strong>Files, certs, sheets, corpora, claims</strong>
+        </div>
+        <i aria-hidden="true">→</i>
+        <div class="library-boundary-middle">
+          <span>Library boundary</span>
+          <strong>Preview · map · project · search</strong>
+        </div>
+        <i aria-hidden="true">→</i>
+        <div>
+          <span>Explicit promotion only</span>
+          <strong>Candidate Pool or exact validation</strong>
+        </div>
+      </div>
+
+      <div class="reference-grid">
+        <article>
+          <span class="reference-symbol">L</span>
+          <div>
+            <h3>Libraries</h3>
+            <p>
+              Think of Libraries as the clean room for everything accumulated outside Rank Hunter:
+              old certs, spreadsheets, exported curve sets, source artifacts, historical observations,
+              aliases, mapped fields, and provenance. Original files remain external research material.
+              You can preview, map, project, search, compare, build Candidate Pools, or explicitly validate
+              mapped points without silently promoting external rank claims into authoritative evidence.
+            </p>
+          </div>
+        </article>
+        <article>
+          <span class="reference-symbol">C</span>
+          <div>
+            <h3>Catalogs</h3>
+            <p>
+              Keep external reference sources such as ICARM or LMFDB distinct from evidence Rank Hunter
+              has actually reproduced in your local research state.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="extend" class="feature-area feature-area-alt">
+      <div class="section-shell">
+        <div class="area-heading">
+          <div class="area-number">06</div>
+          <div>
+            <p class="eyebrow">Extend</p>
+            <h2>Keep core clean. Add the weird stuff anyway.</h2>
+            <p>
+              Specialized mathematics belongs in plugins. Core owns the shared scientific contracts so Families,
+              Features, and Workspaces can be powerful without turning Rank Hunter into a pile of private forks.
+            </p>
+          </div>
+        </div>
+
+        <div class="extend-grid">
+          <article>
+            <span>Family</span>
+            <h3>Equations + mathematics</h3>
+            <p>Exact specialization logic, maps, sections, theorem metadata, torsion structure, and search adapters.</p>
+          </article>
+          <article>
+            <span>Feature</span>
+            <h3>Small contextual tools</h3>
+            <p>Add focused behavior inside supported core research hooks without creating a whole new page.</p>
+          </article>
+          <article>
+            <span>Workspace</span>
+            <h3>Whole research instruments</h3>
+            <p>Create self-contained exploratory pages while preserving core-owned persistence and proof boundaries.</p>
+          </article>
+        </div>
+
+        <div class="feature-page-cta">
+          <div>
+            <strong>Want the concrete list?</strong>
+            <p>Browse every currently published Family, Feature, and Workspace.</p>
+          </div>
+          <a class="button primary" href="../plugins/">Browse plugins</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <div class="section-shell final-cta-inner">
+        <div>
+          <p class="eyebrow">The short version</p>
+          <h2>Go from promising to proved.</h2>
+          <p>
+            Search, investigate, and certify without losing the evidence trail between them.
+          </p>
+        </div>
+        <div class="final-actions">
+          <a class="button primary" href="../download/">Get Rank Hunter</a>
+          <a class="button secondary" href="../plugins/">Browse plugins</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="section-shell footer-inner footer-navlike">
+      <a class="brand footer-brand" href="../" aria-label="Rank Hunter home">
+        <img class="brand-logo" src="../assets/rank-hunter-logo.svg" alt="" aria-hidden="true">
+        <span class="brand-wordmark">Rank Hunter</span>
+      </a>
+      <p class="footer-license">Open source · GPL-3.0</p>
+      <div class="footer-links">
+        <a href="#main">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

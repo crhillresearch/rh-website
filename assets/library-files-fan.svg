@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 220" role="img" aria-labelledby="title desc">
+  <title id="title">Research file formats</title>
+  <desc id="desc">A fanned stack of paper, spreadsheet, and CSV document icons.</desc>
+  <defs>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="180%">
+      <feDropShadow dx="0" dy="7" stdDeviation="7" flood-color="#1f2d4b" flood-opacity=".13"/>
+    </filter>
+    <linearGradient id="blueFold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#dbe8ff"/>
+      <stop offset="1" stop-color="#b9d0ff"/>
+    </linearGradient>
+    <linearGradient id="greenFold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#dff7eb"/>
+      <stop offset="1" stop-color="#bce8d2"/>
+    </linearGradient>
+  </defs>
+
+  <g filter="url(#shadow)">
+    <!-- Paper -->
+    <g transform="translate(24 36) rotate(-12 72 82)">
+      <rect x="0" y="0" width="144" height="170" rx="20" fill="#fff" stroke="#2d6fcb" stroke-width="5"/>
+      <path d="M110 0h14a20 20 0 0 1 20 20v27L110 0z" fill="url(#blueFold)"/>
+      <rect x="24" y="50" width="84" height="10" rx="5" fill="#2f7df4"/>
+      <rect x="24" y="78" width="96" height="7" rx="3.5" fill="#c3d0e8"/>
+      <rect x="24" y="98" width="88" height="7" rx="3.5" fill="#c3d0e8"/>
+      <rect x="24" y="118" width="92" height="7" rx="3.5" fill="#c3d0e8"/>
+      <rect x="24" y="138" width="70" height="7" rx="3.5" fill="#c3d0e8"/>
+    </g>
+
+    <!-- Spreadsheet -->
+    <g transform="translate(108 18) rotate(-1 76 84)">
+      <rect x="0" y="0" width="152" height="178" rx="20" fill="#fff" stroke="#28a06a" stroke-width="5"/>
+      <path d="M118 0h14a20 20 0 0 1 20 20v45l-34-45z" fill="url(#greenFold)"/>
+      <rect x="22" y="28" width="58" height="48" rx="10" fill="#27a56c"/>
+      <g stroke="#fff" stroke-width="4" fill="none">
+        <rect x="34" y="38" width="34" height="28"/>
+        <path d="M51 38v28M34 52h34"/>
+      </g>
+      <rect x="22" y="90" width="106" height="10" rx="5" fill="#38b77e" opacity=".9"/>
+      <g stroke="#8bd1ae" stroke-width="2">
+        <path d="M24 114h100M24 132h100M24 150h100"/>
+        <path d="M56 108v50M88 108v50"/>
+      </g>
+    </g>
+
+    <!-- CSV -->
+    <g transform="translate(202 38) rotate(12 72 82)">
+      <rect x="0" y="0" width="144" height="170" rx="20" fill="#fff" stroke="#246bfd" stroke-width="5"/>
+      <path d="M110 0h14a20 20 0 0 1 20 20v27L110 0z" fill="url(#blueFold)"/>
+      <rect x="20" y="40" width="100" height="48" rx="13" fill="#2f7df4"/>
+      <text x="70" y="71" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="800" fill="#fff">CSV</text>
+      <g fill="#b9c9e3">
+        <rect x="24" y="106" width="34" height="8" rx="4"/>
+        <rect x="70" y="106" width="48" height="8" rx="4"/>
+        <rect x="24" y="126" width="42" height="8" rx="4"/>
+        <rect x="78" y="126" width="40" height="8" rx="4"/>
+        <rect x="24" y="146" width="38" height="8" rx="4"/>
+        <rect x="73" y="146" width="45" height="8" rx="4"/>
+      </g>
+    </g>
+  </g>
+</svg>
